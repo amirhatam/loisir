@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Jeux from './views/Jeux';
+import PetitsChevaux from './views/PetitsChevaux';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         {/* <Route path="/" exact element={Home} /> */}
         <Route path="/jeux" exact element={<Jeux />} />
+        <Route path="/jeux/petits-chevaux" exact element={<PetitsChevaux />} />
 
       </Routes>
     </BrowserRouter>

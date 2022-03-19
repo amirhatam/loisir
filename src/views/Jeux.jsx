@@ -3,23 +3,23 @@ import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn, 
 
 export default function Jeux() {
     return (
-        <MDBContainer >
-            <MDBRow>
-                <MDBCardTitle className='text-center my-md-5 display-4'>Jeux</MDBCardTitle>
+        <MDBContainer className='pb-md-5'>
+            <MDBRow >
+                <MDBCardTitle className='text-center my-md-5 display-4'>Des Jeux</MDBCardTitle>
                 <MDBCol md='4'>
                     <MDBCard >
                         <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay'>
-                            <MDBCardImage src='https://mdbootstrap.com/img/new/standard/nature/111.webp' fluid alt='...' />
+                            <MDBCardImage src='https://www.quedujouet.fr/5126-large_default/jeu-des-petits-chevaux-en-bois-format-voyage.jpg' fluid alt='...' />
                             <a>
                                 <div className='mask' style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}></div>
                             </a>
                         </MDBRipple>
                         <MDBCardBody>
-                            <MDBCardTitle>Card title</MDBCardTitle>
-                            <MDBCardText>
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                            <MDBCardTitle className='text-uppercase'>Jeu des petits chevaux</MDBCardTitle>
+                            <MDBCardText className='fw-lighter text-justify'>
+                                Le jeu des petits chevaux est un jeu qui consiste à déplacer plusieurs pions par joueur, et à les emmener sur la partie réservée à leur couleur. Le premier joueur qui arrive sur la dernière case triangulaire remporte la partie.
                             </MDBCardText>
-                            <MDBBtn href='#'>Button</MDBBtn>
+                            <MDBBtn href='/jeux/petits-chevaux'>Entrer en jeu</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>

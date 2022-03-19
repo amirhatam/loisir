@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body{
+   
+    width: 100%;
+    height: 800px;
+    margin: auto;
+    /* width: 65%; */
+}
+
+i {
+    font-size: 80px;
+    -webkit-transition: all 0.5s 0s ease-out;
+    -moz-transition: all 0.5s 0s ease-out;
+    -o-transition: all 0.5s 0s ease-out;
+    transition: all 0.5s 0s ease-out;
+}
+
+#jeu {
+    display: flex;
+    padding: 20px;
+    margin: 0px 70px;
+    width: 850px;
+    height: 850px;
+    background-color: cadetblue;
+    border: 2px outset white;
+    border-radius: 20px;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.4); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.4);
+}
+
+#monDee {
+    width: 300px;
+    margin-left: 50px;
+}
+
+#col1 {
+     display: flex;
+}
+
+#col2 {
+    /* display: grid;
+    grid-template-columns: 1fr;
+    grid-row: 1fr 1fr 1fr 1fr 1fr 1fr; */
+
+    display: flex;
+    flex-direction: column;
+}
+
+#col3 {
+    bottom: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#col4 {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+button {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    border-radius: 20px;    
+}
+
+/* p {
+    font-size: 40px;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    margin: 0;
+} */
+
+
+
+
+.b1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    border-radius: 20px;
+    background-color: cornflowerblue;
+    padding: 10px 15px 13px 10px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #3870d8;
+}
+.b1:hover {background-color: #4480ec}
+
+.b1:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.b2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    border-radius: 20px;
+    background-color: #ec4444;
+    padding: 10px 15px 13px 10px;
+    padding: 10px 15px 13px 10px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #d61d1d;
+}
+.b2:hover {background-color: #e42626}
+
+.b2:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+
+.numeroDee {
+    text-align: center;
+    font-size: 4rem;
+}
+
+
+.containerP1 {
+    text-align: center;
+    border-radius: 30%;
+    height: 250px;
+    width: 250px;
+    background-color: #4480ec;
+}
+
+.divchildP1 {
+    padding-top: 35px;
+}
+
+.containerP2 {
+    text-align: center;
+    border-radius: 30%;
+    height: 250px;
+    width: 250px;
+    background-color: #ec4444;
+}
+
+.divchildP2 {
+    padding-top: 35px;
+}
+
+.spanP1{
+    color: #4480ec;
+}
+
+
+.spanP2{
+    color: #ec4444;
+}
+
+.grid-game {
+    display: grid;
+    grid-template-columns: 80px auto 80px;
+    grid-template-rows: 80px auto 80px;
+    gap: 5px;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid-item-4 {
+    flex-direction: column-reverse;
+}
+
+.grid-item-5 {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.grid-item-6 {
+    flex-direction: column;
+}
+
+.grid-item-8 {
+    flex-direction: row-reverse;
+}
+.bg-g{
+   background: linear-gradient(#e66465, #9198e5);
+
+}
+
+.rainbow {
+  
+    margin: 0 8vmax;
+   /* font-family: 'Pacifico', cursive; */
+   text-shadow: 2px 2px 4px #000000;
+   font-size:40px;
+   
+   
+   -webkit-animation: rainbow 5s infinite; 
+   animation: rainbow 5s infinite;  
+ }
+ 
+ 
+ @-webkit-keyframes rainbow{
+   0%{color: orange;}	
+   10%{color: purple;}	
+     20%{color: red;}
+   30%{color: CadetBlue;}
+     40%{color: yellow;}
+   50%{color: coral;}
+     60%{color: green;}
+   70%{color: cyan;}
+   80%{color: DeepPink;}
+   90%{color: DodgerBlue;}
+     100%{color: orange;}
+ }
+ 
+
+ 
+
+ @keyframes rainbow{
+     0%{color: orange;}	
+   10%{color: purple;}	
+     20%{color: red;}
+   30%{color: CadetBlue;}
+     40%{color: yellow;}
+   50%{color: coral;}
+     60%{color: green;}
+   70%{color: cyan;}
+   80%{color: DeepPink;}
+   90%{color: DodgerBlue;}
+     100%{color: orange;}
+ }
+
+   @-webkit-keyframes rainbow {
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  } 
+  
+   @-moz-keyframes rainbow {
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  } 
+   @-o-keyframes rainbow {
+      0%{background-position:0% 82%}
+      50%{background-position:100% 19%}
+      100%{background-position:0% 82%}
+  } 
+  .logo {
+    font-size: 6rem !important;
+  }
