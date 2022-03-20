@@ -40,7 +40,7 @@ export default function Navbar() {
                                 <MDBNavbarLink href='/jeux'>Jeux</MDBNavbarLink>
                             </MDBNavbarItem>
                             <MDBNavbarItem>
-                                <MDBNavbarLink href='#'>Calculators</MDBNavbarLink>
+                                <MDBNavbarLink href='/calculator'>Calculators</MDBNavbarLink>
                             </MDBNavbarItem>
                             <MDBNavbarItem>
                                 <MDBNavbarLink href='#'>About</MDBNavbarLink>
