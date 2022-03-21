@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Calculator from './views/Calculators';
 import Home from './views/Home';
 import Jeux from './views/Jeux';
+import LargeNumbers from './views/LargeNumbers';
 import PetitsChevaux from './views/PetitsChevaux';
 import SecondsToDate from './views/SecondsToDate';
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/jeux/petits-chevaux" exact element={<PetitsChevaux />} />
         <Route path="/calculator" exact element={<Calculator />} />
         <Route path="/calculator/seconds-to-date" exact element={<SecondsToDate />} />
+        <Route path="/calculator/large-numbers" exact element={<LargeNumbers />} />
 
       </Routes>
     </BrowserRouter>

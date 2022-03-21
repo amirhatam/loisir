@@ -15,19 +15,19 @@ export default function Calculator() {
                                 The calculated seconds will be displayed in years, months, weeks, days, hours, minutes, and seconds.
                             </MDBCardText>
                             <MDBCardLink href='/calculator/seconds-to-date'>Enter</MDBCardLink>
-                            <MDBCardLink href='#'>Source Code</MDBCardLink>
+                            <MDBCardLink target="_blank" href='https://github.com/amirhatam/codewars/blob/main/4-kyu/human-readable-duration/human-readable-duration.js'>Source Code</MDBCardLink>
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>
                 <MDBCol md='3'>
                     <MDBCard >
                         <MDBCardBody>
-                            <MDBCardTitle className='text-uppercase'>Seconds to date</MDBCardTitle>
+                            <MDBCardTitle className='text-uppercase'>Multiplying large numbers</MDBCardTitle>
                             <br />
                             <MDBCardText>
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                                Multiplying very large numbers.
                             </MDBCardText>
-                            <MDBCardLink href='#'>Enter</MDBCardLink>
+                            <MDBCardLink href='/calculator/large-numbers'>Enter</MDBCardLink>
                             <MDBCardLink href='#'>Source Code</MDBCardLink>
                         </MDBCardBody>
                     </MDBCard>
