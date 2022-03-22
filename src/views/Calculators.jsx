@@ -12,7 +12,7 @@ export default function Calculator() {
                             <MDBCardTitle className='text-uppercase'>Seconds to date</MDBCardTitle>
                             <br />
                             <MDBCardText>
-                                The calculated seconds will be displayed in years, months, weeks, days, hours, minutes, and seconds.
+                                Convert seconds to date( years, months, days...)
                             </MDBCardText>
                             <MDBCardLink href='/calculator/seconds-to-date'>Enter</MDBCardLink>
                             <MDBCardLink target="_blank" href='https://github.com/amirhatam/codewars/blob/main/4-kyu/human-readable-duration/human-readable-duration.js'>Source Code</MDBCardLink>
