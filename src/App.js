@@ -3,6 +3,7 @@ import {
   BrowserRouter, Route, Routes
 } from "react-router-dom";
 import Navbar from './components/Navbar';
+import AgeInDays from './views/AgeInDays';
 import Calculator from './views/Calculators';
 import Home from './views/Home';
 import Jeux from './views/Jeux';
@@ -23,6 +24,7 @@ function App() {
         <Route path="/calculator/seconds-to-date" exact element={<SecondsToDate />} />
         <Route path="/calculator/large-numbers" exact element={<LargeNumbers />} />
         <Route path="/calculator/tribonacci" exact element={<Tribonacci />} />
+        <Route path="/calculator/age-in-days" exact element={<AgeInDays />} />
 
       </Routes>
     </BrowserRouter>
