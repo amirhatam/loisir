@@ -6,22 +6,20 @@ export default function AgeInDays() {
     const [m, setMonth] = useState("")
     const [d, setDays] = useState("")
     const [daysResult, setDaysResult] = useState("")
+    const [inputErr, setInputErr] = useState("")
 
-
-
-    // function ageInDays() {
-    //     if (!inputValue) {
-    //         setErrorFirstInput("Please enter number")
-    //     } else {
-    //         setErrorFirstInput("")
-    //     }
-
-    // }
     const ageInDays = () => {
-        let getDays = 'You are ' + (new Date() - new Date().setFullYear(y, m - 1, d)) / 86400000 + ' days old'
-        if (getDays) {
-            setDaysResult(getDays);
+        if (!y || !m || !d) {
+            setInputErr("Please enter birthday")
+            setDaysResult("");
+        } else {
+            setInputErr("")
+            let getDays = 'You are ' + (new Date() - new Date().setFullYear(y, m - 1, d)) / 86400000 + ' days old'
+            if (getDays) {
+                setDaysResult(getDays);
+            }
         }
+
     }
     return (
         <MDBContainer className='pb-md-5'>
@@ -43,13 +41,13 @@ export default function AgeInDays() {
                                     <MDBInput label='Days' onChange={(e) => setDays(parseInt(e.target.value))} id='form1' type='text' />
                                 </MDBCol>
                             </MDBRow>
-                            {/* {
-                                errorFirstInput
+                            {
+                                inputErr
                                     ?
-                                    <p className='text-center text-danger'>{errorFirstInput}</p>
+                                    <p className='text-center text-danger mt-md-3'>{inputErr}</p>
                                     :
                                     null
-                            } */}
+                            }
 
                             {
                                 daysResult
