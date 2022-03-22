@@ -64,7 +64,6 @@ export default function Tribonacci() {
                                             <p className='text-center text-danger'>{errorSecondInput}</p>
                                             :
                                             null
-
                                     }
                                 </MDBCol>
                             </MDBRow>
