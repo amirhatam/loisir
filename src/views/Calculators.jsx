@@ -6,7 +6,7 @@ export default function Calculator() {
         <MDBContainer className='pb-md-5'>
             <MDBRow >
                 <MDBCardTitle className='text-center my-md-5 display-4'>Des Calculatrices</MDBCardTitle>
-                <MDBCol md='3'>
+                <MDBCol md='4'>
                     <MDBCard >
                         <MDBCardBody>
                             <MDBCardTitle className='text-uppercase'>Seconds to date</MDBCardTitle>
@@ -19,7 +19,7 @@ export default function Calculator() {
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>
-                <MDBCol md='3'>
+                <MDBCol md='4'>
                     <MDBCard >
                         <MDBCardBody>
                             <MDBCardTitle className='text-uppercase'>Multiplying large numbers</MDBCardTitle>
@@ -28,36 +28,24 @@ export default function Calculator() {
                                 Multiplying very large numbers.
                             </MDBCardText>
                             <MDBCardLink href='/calculator/large-numbers'>Enter</MDBCardLink>
-                            <MDBCardLink href='#'>Source Code</MDBCardLink>
+                            <MDBCardLink href='https://github.com/amirhatam/codewars/blob/main/4-kyu/multiply-nums-as-str/multiply-nums-as-str.js'>Source Code</MDBCardLink>
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>
-                <MDBCol md='3'>
+                <MDBCol md='4'>
                     <MDBCard >
                         <MDBCardBody>
-                            <MDBCardTitle className='text-uppercase'>Seconds to date</MDBCardTitle>
+                            <MDBCardTitle className='text-uppercase'>Tribonacci</MDBCardTitle>
                             <br />
                             <MDBCardText>
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                                Find tribonacci numbers, between two points.
                             </MDBCardText>
-                            <MDBCardLink href='#'>Enter</MDBCardLink>
+                            <MDBCardLink href='/calculator/tribonacci'>Enter</MDBCardLink>
                             <MDBCardLink href='#'>Source Code</MDBCardLink>
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>
-                <MDBCol md='3'>
-                    <MDBCard >
-                        <MDBCardBody>
-                            <MDBCardTitle className='text-uppercase'>Seconds to date</MDBCardTitle>
-                            <br />
-                            <MDBCardText>
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                            </MDBCardText>
-                            <MDBCardLink href='#'>Enter</MDBCardLink>
-                            <MDBCardLink href='#'>Source Code</MDBCardLink>
-                        </MDBCardBody>
-                    </MDBCard>
-                </MDBCol>
+
             </MDBRow>
         </MDBContainer>
     );

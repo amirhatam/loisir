@@ -9,6 +9,7 @@ import Jeux from './views/Jeux';
 import LargeNumbers from './views/LargeNumbers';
 import PetitsChevaux from './views/PetitsChevaux';
 import SecondsToDate from './views/SecondsToDate';
+import Tribonacci from './views/Tribonacci';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/calculator" exact element={<Calculator />} />
         <Route path="/calculator/seconds-to-date" exact element={<SecondsToDate />} />
         <Route path="/calculator/large-numbers" exact element={<LargeNumbers />} />
+        <Route path="/calculator/tribonacci" exact element={<Tribonacci />} />
 
       </Routes>
     </BrowserRouter>

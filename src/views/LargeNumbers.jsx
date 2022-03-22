@@ -49,7 +49,7 @@ export default function LargeNumbers() {
                             <MDBInput label='Enter First Number' onChange={(e) => setFirstInput(e.target.value)} id='form1' type='text' className='' />
                             <MDBCardText className='my-md-2  text-center text-warning '>X</MDBCardText>
                             <MDBInput label='Enter Seconds Number' onChange={(e) => setSecondInput(e.target.value)} id='form1' type='text' className='mb-md-3' />
-                            <MDBCardText className='my-md-2  text-center text-warning '>=</MDBCardText>
+                            <MDBCardText className='my-md-2 text-center text-warning'>=</MDBCardText>
                             {
                                 dateResult
                                     ?
