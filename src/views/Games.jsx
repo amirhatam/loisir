@@ -5,7 +5,7 @@ export default function Jeux() {
     return (
         <MDBContainer className='pb-md-5'>
             <MDBRow >
-                <MDBCardTitle className='text-center my-md-5 display-4'>Des Jeux</MDBCardTitle>
+                <MDBCardTitle className='text-center my-md-5 display-4'>The Games</MDBCardTitle>
                 <MDBCol md='4'>
                     <MDBCard >
                         <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay'>

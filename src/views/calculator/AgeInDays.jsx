@@ -5,8 +5,12 @@ export default function AgeInDays() {
     const [y, setYear] = useState("")
     const [m, setMonth] = useState("")
     const [d, setDays] = useState("")
-    const [daysResult, setDaysResult] = useState("")
     const [inputErr, setInputErr] = useState("")
+    const [daysResult, setDaysResult] = useState("")
+    const [hoursResult, setHoursResult] = useState("")
+    const [minutesResult, setMinutesResult] = useState("")
+    const [secondsResult, setSecondsResult] = useState("")
+
 
     const ageInDays = () => {
         if (!y || !m || !d) {
@@ -17,6 +21,9 @@ export default function AgeInDays() {
             let getDays = (new Date() - new Date().setFullYear(y, m - 1, d)) / 86400000
             if (getDays) {
                 setDaysResult(getDays);
+                setHoursResult(getDays * 24)
+                setMinutesResult(getDays * 24 * 60)
+                setSecondsResult(getDays * 24 * 60 * 60)
             }
         }
     }
@@ -43,15 +50,29 @@ export default function AgeInDays() {
                             {
                                 inputErr
                                     ?
-                                    <p className='text-center text-danger mt-md-3'>{inputErr} </p>
+                                    <p className='text-center text-danger mt-md-3'>
+                                        {inputErr}
+
+                                    </p>
                                     :
                                     null
                             }
-
                             {
                                 daysResult
                                     ?
-                                    <p className='text-center my-md-4'>You are {daysResult} days old</p>
+                                    <p className=' my-md-4'>
+                                        <strong>
+                                            Your age is :
+                                        </strong>
+                                        <br />
+                                        {daysResult} days
+                                        <br />
+                                        or {hoursResult} hours
+                                        <br />
+                                        or  {minutesResult} minutes
+                                        <br />
+                                        or {secondsResult} seconds
+                                    </p>
                                     :
                                     null
                             }

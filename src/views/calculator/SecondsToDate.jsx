@@ -46,7 +46,7 @@ export default function SecondsToDate() {
                             {
                                 dateResult
                                     ?
-                                    <p className='text-center  text-success'>{dateResult}</p>
+                                    <p className='text-center'>{dateResult}  </p>
                                     :
                                     null
                             }
