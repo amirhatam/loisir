@@ -1,5 +1,6 @@
 import React from 'react'
 import { MDBContainer, MDBRow } from 'mdb-react-ui-kit'
+import HomeCards from './HomeCards'
 
 
 
@@ -11,6 +12,7 @@ function Home() {
                     <img src="https://raw.githubusercontent.com/juliangarnier/anime/master/documentation/assets/img/animejs-v3-header-animation.gif" className='img-fluid  ' alt='...' />
                 </div >
             </MDBRow>
+            <HomeCards />
         </MDBContainer>
     )
 }
