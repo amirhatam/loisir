@@ -18,6 +18,7 @@ export default function AgeInDays() {
             setDaysResult("");
         } else {
             setInputErr("")
+            //Find age in days
             let getDays = (new Date() - new Date().setFullYear(y, m - 1, d)) / 86400000
             if (getDays) {
                 setDaysResult(getDays);
@@ -34,8 +35,8 @@ export default function AgeInDays() {
                 <MDBCol md='4'>
                     <MDBCard >
                         <MDBCardBody>
-                            <MDBCardTitle className='text-uppercase'>Age in days</MDBCardTitle>
-                            <MDBCardText className='my-md-4 fw-lighter'>Find your age in days</MDBCardText>
+                            <MDBCardTitle className='text-uppercase'>Age Calculator</MDBCardTitle>
+                            <MDBCardText className='my-md-4 fw-lighter'>Find your age in days, hours, minutes, seconds.</MDBCardText>
                             <MDBRow>
                                 <MDBCol md="3">
                                     <MDBInput label='Year' onChange={(e) => setYear(parseInt(e.target.value))} id='form1' type='text' />

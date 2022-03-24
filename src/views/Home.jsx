@@ -1,9 +1,17 @@
-import { } from 'mdb-react-ui-kit'
 import React from 'react'
+import { MDBContainer, MDBRow } from 'mdb-react-ui-kit'
+
+
 
 function Home() {
     return (
-        <img src="https://p6.storage.canalblog.com/68/03/1305055/99585651_o.jpg" className='img-fluid shadow-4' alt='...' />
+        <MDBContainer>
+            <MDBRow className='justify-content-center'>
+                <div className="col-4" >
+                    <img src="https://raw.githubusercontent.com/juliangarnier/anime/master/documentation/assets/img/animejs-v3-header-animation.gif" className='img-fluid  ' alt='...' />
+                </div >
+            </MDBRow>
+        </MDBContainer>
     )
 }
 

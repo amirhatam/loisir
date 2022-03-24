@@ -18,7 +18,7 @@ export default function Navbar() {
         <>
             <MDBNavbar expand='lg' dark bgColor='dark'>
                 <MDBContainer >
-                    <MDBNavbarBrand target="_blank" href='https://github.com/amirhatam/loisir'>Hobbies & Leisure</MDBNavbarBrand>
+                    <MDBNavbarBrand /* target="_blank" href='https://github.com/amirhatam/loisir' */>Hobbies & Leisure</MDBNavbarBrand>
                     <MDBNavbarToggler
                         type='button'
                         data-target='#navbarColor02'

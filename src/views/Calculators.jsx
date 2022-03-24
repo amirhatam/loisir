@@ -48,7 +48,7 @@ export default function Calculator() {
                             <MDBCardTitle className='text-uppercase'>Age in days</MDBCardTitle>
                             <br />
                             <MDBCardText>
-                                Did you ever want to know how many days old are you? Here you can find your age in days.
+                                Did you ever want to know how many days old are you? Here you can find your age in days, hours ....
                             </MDBCardText>
                             <MDBCardLink href='/calculator/age-in-days'>Enter</MDBCardLink>
                         </MDBCardBody>
