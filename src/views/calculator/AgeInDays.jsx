@@ -14,12 +14,11 @@ export default function AgeInDays() {
             setDaysResult("");
         } else {
             setInputErr("")
-            let getDays = 'You are ' + (new Date() - new Date().setFullYear(y, m - 1, d)) / 86400000 + ' days old'
+            let getDays = (new Date() - new Date().setFullYear(y, m - 1, d)) / 86400000
             if (getDays) {
                 setDaysResult(getDays);
             }
         }
-
     }
     return (
         <MDBContainer className='pb-md-5'>
@@ -44,7 +43,7 @@ export default function AgeInDays() {
                             {
                                 inputErr
                                     ?
-                                    <p className='text-center text-danger mt-md-3'>{inputErr}</p>
+                                    <p className='text-center text-danger mt-md-3'>{inputErr} </p>
                                     :
                                     null
                             }
@@ -52,7 +51,7 @@ export default function AgeInDays() {
                             {
                                 daysResult
                                     ?
-                                    <p className='text-center my-md-4'>{daysResult}</p>
+                                    <p className='text-center my-md-4'>You are {daysResult} days old</p>
                                     :
                                     null
                             }

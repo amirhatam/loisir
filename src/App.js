@@ -3,14 +3,14 @@ import {
   BrowserRouter, Route, Routes
 } from "react-router-dom";
 import Navbar from './components/Navbar';
-import AgeInDays from './views/AgeInDays';
 import Calculator from './views/Calculators';
 import Home from './views/Home';
-import Jeux from './views/Jeux';
-import LargeNumbers from './views/LargeNumbers';
-import PetitsChevaux from './views/PetitsChevaux';
-import SecondsToDate from './views/SecondsToDate';
-import Tribonacci from './views/Tribonacci';
+import Jeux from './views/Games';
+import PetitsChevaux from './views/game/PetitsChevaux';
+import LargeNumbers from './views/calculator/LargeNumbers';
+import AgeInDays from './views/calculator/AgeInDays';
+import SecondsToDate from './views/calculator/SecondsToDate';
+import Tribonacci from './views/calculator/Tribonacci';
 
 function App() {
   return (
