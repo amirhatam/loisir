@@ -1,5 +1,7 @@
 import React from 'react';
-import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardHeader, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardHeader, MDBRow, MDBCol, MDBCardLink } from 'mdb-react-ui-kit';
+import "../assets/styles/HomeCards.css";
+
 
 export default function HomeCards() {
     return (
@@ -7,88 +9,98 @@ export default function HomeCards() {
 
             <MDBCol size="3">
                 <MDBCard background='primary' className='text-white mb-3' style={{ maxWidth: '18rem' }}>
-                    <MDBCardHeader>Header</MDBCardHeader>
+                    <MDBCardHeader>
+                        <MDBCardLink href='/games' className='txt-white'>
+                            The Game
+                        </MDBCardLink>
+                    </MDBCardHeader>
                     <MDBCardBody>
-                        <MDBCardTitle>Primary card title</MDBCardTitle>
-                        <MDBCardText>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </MDBCardText>
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-
-            <MDBCol size="3">
-                <MDBCard background='secondary' className='text-white mb-3' style={{ maxWidth: '18rem' }}>
-                    <MDBCardHeader>Header</MDBCardHeader>
-                    <MDBCardBody>
-                        <MDBCardTitle>Secondary card title</MDBCardTitle>
-                        <MDBCardText>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </MDBCardText>
+                        <MDBCardTitle>PETITS CHEVAUX</MDBCardTitle>
                     </MDBCardBody>
                 </MDBCard>
             </MDBCol>
 
             <MDBCol size="3">
                 <MDBCard background='success' className='text-white mb-3' style={{ maxWidth: '18rem' }}>
-                    <MDBCardHeader>Header</MDBCardHeader>
+                    <MDBCardHeader >
+                        <MDBCardLink href='/calculator' className='txt-white'>
+                            The Calculator
+                        </MDBCardLink>
+                    </MDBCardHeader>
                     <MDBCardBody>
-                        <MDBCardTitle>Success card title</MDBCardTitle>
-                        <MDBCardText>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </MDBCardText>
+                        <MDBCardTitle>SECONDS TO DATE</MDBCardTitle>
+
                     </MDBCardBody>
                 </MDBCard>
             </MDBCol>
 
             <MDBCol size="3">
                 <MDBCard background='danger' className='text-white mb-3' style={{ maxWidth: '18rem' }}>
-                    <MDBCardHeader>Header</MDBCardHeader>
+                    <MDBCardHeader>
+                        <MDBCardLink href='/calculator' className='txt-white'>
+                            The Calculator
+                        </MDBCardLink>
+                    </MDBCardHeader>
                     <MDBCardBody>
-                        <MDBCardTitle>Danger card title</MDBCardTitle>
-                        <MDBCardText>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </MDBCardText>
+                        <MDBCardTitle className=''>MULTIPLY BIG NUMBERS</MDBCardTitle>
+
                     </MDBCardBody>
                 </MDBCard>
             </MDBCol>
 
             <MDBCol size='3'>
-                <MDBCard background='warning' className='mb-3' style={{ maxWidth: '18rem' }}>
-                    <MDBCardHeader>Header</MDBCardHeader>
+                <MDBCard background='warning' className='text-white mb-3' style={{ maxWidth: '18rem' }}>
+                    <MDBCardHeader>
+                        <MDBCardLink href='/calculator' className='txt-white'>
+                            The Calculator
+                        </MDBCardLink>
+                    </MDBCardHeader>
                     <MDBCardBody>
-                        <MDBCardTitle>Warning card title</MDBCardTitle>
-                        <MDBCardText>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </MDBCardText>
+                        <MDBCardTitle>TRIBONACCI NUMBERS</MDBCardTitle>
+
                     </MDBCardBody>
                 </MDBCard>
             </MDBCol>
 
             <MDBCol size='3'>
-                <MDBCard background='info' className='text-body mb-3' style={{ maxWidth: '18rem' }}>
-                    <MDBCardHeader>Header</MDBCardHeader>
+                <MDBCard background='info' className='text-white mb-3' style={{ maxWidth: '18rem' }}>
+                    <MDBCardHeader>
+                        <MDBCardLink href='/calculator' className='txt-white'>
+                            The Calculator
+                        </MDBCardLink>
+                    </MDBCardHeader>
                     <MDBCardBody>
-                        <MDBCardTitle>Info card title</MDBCardTitle>
-                        <MDBCardText>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </MDBCardText>
+                        <MDBCardTitle>AGE IN DAYS</MDBCardTitle>
                     </MDBCardBody>
                 </MDBCard>
             </MDBCol>
 
-            <MDBCol size='3'>
+            {/* <MDBCol size='3'>
                 <MDBCard background='dark' className='text-white' style={{ maxWidth: '18rem' }}>
-                    <MDBCardHeader>Header</MDBCardHeader>
+                    <MDBCardHeader>
+                        <MDBCardLink href='/calculator' className='txt-white'>
+                            The Calculator
+                        </MDBCardLink>
+                    </MDBCardHeader>
                     <MDBCardBody>
                         <MDBCardTitle>Dark card title</MDBCardTitle>
-                        <MDBCardText>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </MDBCardText>
                     </MDBCardBody>
                 </MDBCard>
-            </MDBCol>
+            </MDBCol> */}
 
+            {/* <MDBCol size="3">
+                <MDBCard background='secondary' className='text-white mb-3' style={{ maxWidth: '18rem' }}>
+                    <MDBCardHeader>
+                        <MDBCardLink href='/calculator' className='txt-white'>
+                            The Calculator
+                        </MDBCardLink>
+                    </MDBCardHeader>
+                    <MDBCardBody>
+                        <MDBCardTitle>Secondary card title</MDBCardTitle>
+
+                    </MDBCardBody>
+                </MDBCard>
+            </MDBCol> */}
 
         </MDBRow>
     );

@@ -1,5 +1,5 @@
 import React from "react";
-import '../../assets/style/PetitsChevaux.css'
+import '../../assets/styles/PetitsChevaux.css'
 import Circle from "../../components/Circle.jsx"
 import Winner from "../../assets/pic/winner.gif"
 

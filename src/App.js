@@ -12,6 +12,7 @@ import AgeInDays from './views/calculator/AgeInDays';
 import SecondsToDate from './views/calculator/SecondsToDate';
 import Tribonacci from './views/calculator/Tribonacci';
 import { Footer } from './components/Footer';
+import ContactPage from './views/ContactPage';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
         <Route path="/calculator/large-numbers" exact element={<LargeNumbers />} />
         <Route path="/calculator/tribonacci" exact element={<Tribonacci />} />
         <Route path="/calculator/age-in-days" exact element={<AgeInDays />} />
-
+        <Route path="/contact" exact element={<ContactPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
