@@ -75,18 +75,18 @@ export default function HomeCards() {
                 </MDBCard>
             </MDBCol>
 
-            {/* <MDBCol size='3'>
+            <MDBCol size='3'>
                 <MDBCard background='dark' className='text-white card-container' >
-                    <MDBCardHeader>
+                    <MDBCardHeader className='border-bottom'>
                         <MDBCardLink href='/calculator' className='txt-white'>
                             The Calculator
                         </MDBCardLink>
                     </MDBCardHeader>
                     <MDBCardBody>
-                        <MDBCardTitle>Dark card title</MDBCardTitle>
+                        <MDBCardTitle>SQUARE NUMBER</MDBCardTitle>
                     </MDBCardBody>
                 </MDBCard>
-            </MDBCol> */}
+            </MDBCol>
 
             {/* <MDBCol size="3">
                 <MDBCard background='secondary' className='text-white mb-3 card-container' >
