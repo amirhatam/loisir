@@ -6,6 +6,8 @@ export default function AgeInDays() {
     const [m, setMonth] = useState("")
     const [d, setDays] = useState("")
     const [inputErr, setInputErr] = useState("")
+
+    const [age, setAge] = useState("")
     const [daysResult, setDaysResult] = useState("")
     const [hoursResult, setHoursResult] = useState("")
     const [minutesResult, setMinutesResult] = useState("")
@@ -18,6 +20,14 @@ export default function AgeInDays() {
             setDaysResult("");
         } else {
             setInputErr("")
+
+            //Find age in complete version years, months, days
+            const birthday = new Date(`${y}-${m}-${d}`)
+            const years = new Date(new Date() - birthday).getFullYear() - 1970
+            const months = new Date(new Date() - birthday).getMonth()
+            const days = new Date(new Date() - birthday).getDate() - 1
+            setAge(`You are ${years} years ${months} months ${days} days`)
+
             //Find age in days
             let getDays = (new Date() - new Date().setFullYear(y, m - 1, d)) / 86400000
             if (getDays) {
@@ -66,7 +76,9 @@ export default function AgeInDays() {
                                             Your age is :
                                         </strong>
                                         <br />
-                                        {daysResult} days
+                                        {age}
+                                        <br />
+                                        or {daysResult} days
                                         <br />
                                         or {hoursResult} hours
                                         <br />
