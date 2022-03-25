@@ -37,7 +37,7 @@ export default function Calculator() {
                                 <MDBCardTitle className='text-uppercase'>Tribonacci</MDBCardTitle>
                                 <br />
                                 <MDBCardText>
-                                    Find tribonacci numbers, between two points.
+                                    Find tribonacci numbers, between two numbers.
                                 </MDBCardText>
                                 <MDBCardLink href='/calculator/tribonacci'>Enter</MDBCardLink>
                             </MDBCardBody>
@@ -52,6 +52,18 @@ export default function Calculator() {
                                     Did you ever want to know how many days old are you? Here you can find your age in days, hours ....
                                 </MDBCardText>
                                 <MDBCardLink href='/calculator/age-in-days'>Enter</MDBCardLink>
+                            </MDBCardBody>
+                        </MDBCard>
+                    </MDBCol>
+                    <MDBCol md='4' className='mt-md-5'>
+                        <MDBCard >
+                            <MDBCardBody>
+                                <MDBCardTitle className='text-uppercase'>Square number</MDBCardTitle>
+                                <br />
+                                <MDBCardText>
+                                    Find square numbers, between two numbers.
+                                </MDBCardText>
+                                <MDBCardLink href='/calculator/square-numbers'>Enter</MDBCardLink>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>
