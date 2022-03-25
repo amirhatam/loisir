@@ -8,7 +8,7 @@ export default function HomeCards() {
         <MDBRow className='my-5'>
 
             <MDBCol size="3">
-                <MDBCard background='primary' className='text-white mb-3' style={{ maxWidth: '18rem' }}>
+                <MDBCard background='primary' className='text-white mb-3 card-container' >
                     <MDBCardHeader>
                         <MDBCardLink href='/games' className='txt-white'>
                             The Game
@@ -21,7 +21,7 @@ export default function HomeCards() {
             </MDBCol>
 
             <MDBCol size="3">
-                <MDBCard background='success' className='text-white mb-3' style={{ maxWidth: '18rem' }}>
+                <MDBCard background='success' className='text-white mb-3 card-container' >
                     <MDBCardHeader >
                         <MDBCardLink href='/calculator' className='txt-white'>
                             The Calculator
@@ -35,7 +35,7 @@ export default function HomeCards() {
             </MDBCol>
 
             <MDBCol size="3">
-                <MDBCard background='danger' className='text-white mb-3' style={{ maxWidth: '18rem' }}>
+                <MDBCard background='danger' className='text-white mb-3 card-container' >
                     <MDBCardHeader>
                         <MDBCardLink href='/calculator' className='txt-white'>
                             The Calculator
@@ -49,7 +49,7 @@ export default function HomeCards() {
             </MDBCol>
 
             <MDBCol size='3'>
-                <MDBCard background='warning' className='text-white mb-3' style={{ maxWidth: '18rem' }}>
+                <MDBCard background='warning' className='text-white mb-3 card-container' >
                     <MDBCardHeader>
                         <MDBCardLink href='/calculator' className='txt-white'>
                             The Calculator
@@ -63,7 +63,7 @@ export default function HomeCards() {
             </MDBCol>
 
             <MDBCol size='3'>
-                <MDBCard background='info' className='text-white mb-3' style={{ maxWidth: '18rem' }}>
+                <MDBCard background='info' className='text-white mb-3 card-container' >
                     <MDBCardHeader>
                         <MDBCardLink href='/calculator' className='txt-white'>
                             The Calculator
@@ -76,7 +76,7 @@ export default function HomeCards() {
             </MDBCol>
 
             {/* <MDBCol size='3'>
-                <MDBCard background='dark' className='text-white' style={{ maxWidth: '18rem' }}>
+                <MDBCard background='dark' className='text-white card-container' >
                     <MDBCardHeader>
                         <MDBCardLink href='/calculator' className='txt-white'>
                             The Calculator
@@ -89,7 +89,7 @@ export default function HomeCards() {
             </MDBCol> */}
 
             {/* <MDBCol size="3">
-                <MDBCard background='secondary' className='text-white mb-3' style={{ maxWidth: '18rem' }}>
+                <MDBCard background='secondary' className='text-white mb-3 card-container' >
                     <MDBCardHeader>
                         <MDBCardLink href='/calculator' className='txt-white'>
                             The Calculator

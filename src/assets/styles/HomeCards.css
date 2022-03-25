@@ -4,3 +4,7 @@
 a:hover {
     color: red;
 }
+.card-container {
+    max-width: 18rem;
+   
+}
