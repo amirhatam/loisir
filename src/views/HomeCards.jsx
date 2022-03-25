@@ -5,8 +5,7 @@ import "../assets/styles/HomeCards.css";
 
 export default function HomeCards() {
     return (
-        <MDBRow className='my-5'>
-
+        <MDBRow className='justify-content-center my-5'>
             <MDBCol size="3">
                 <MDBCard background='primary' className='text-white mb-3 card-container' >
                     <MDBCardHeader>
