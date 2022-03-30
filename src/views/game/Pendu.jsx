@@ -4,13 +4,22 @@ import { MDBContainer, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn, 
 
 
 export const Pendu = () => {
-    const [randomWord, setRandomWord] = useState("wellcome")
+    const [randomWord, setRandomWord] = useState("test")
+    const [numberOfPlay, setNumberOfPlay] = useState(8)
     const [input, setInput] = useState("")
     const [lettersChosen, setLettersChosen] = useState([])
     const [wordsFound, setWordsFound] = useState([])
-    const [errMsg, setErrMsg] = useState([])
-    const [numberOfPlay, setNumberOfPlay] = useState(10)
 
+    const [errMsg, setErrMsg] = useState([])
+    const [EndGameMsg, setEndGameMsg] = useState("")
+    const [lettersChosenMsg, setLettersChosenMsg] = useState("")
+
+
+    if (wordsFound.length === 0) {
+        for (let i = 0; i < randomWord.length; i++) {
+            wordsFound.push("_")
+        }
+    }
 
     const findMysteryWord = () => {
 
@@ -20,12 +29,16 @@ export const Pendu = () => {
             if (input.length === 1) {
                 if (lettersChosen.indexOf(input) === -1) {
                     lettersChosen.push(input)
+                    setLettersChosenMsg("The letters you entered are : ")
+                    setErrMsg("");
+                } else {
+                    setErrMsg("You've already tried with that letter. I'm not counting this try because I'm nice ;)");
+                    return;
+                }
+
+                if (!randomWord.includes(input)) {
                     numOfPlay--
                     setNumberOfPlay(numOfPlay)
-                } else {
-                    console.log("You've already tried with that letter. I'm not counting this try because I'm nice");
-                    setErrMsg("You've already tried with that letter. I'm not counting this try because I'm nice");
-                    return;
                 }
 
                 const result = []
@@ -58,57 +71,94 @@ export const Pendu = () => {
 
                     })
                     if (result.join("") === randomWord) {
-                        console.log("You've won!! Congratulations!! The word was:", randomWord);
-
+                        setEndGameMsg("You've won!! Congratulations!! The word was: ",);
                     }
                 }
-
 
                 return setWordsFound(result)
 
             } else {
                 if (input == randomWord) {
-                    console.log("You've won!! Congratulations!! The word was:", randomWord);
+                    setEndGameMsg("You've won!! Congratulations!! The word was: ");
+                    setNumberOfPlay(numOfPlay)
+                } else {
+                    setErrMsg("")
                     numOfPlay--
+                    setErrMsg(`No, the word was not ${input}`);
                     setNumberOfPlay(numOfPlay)
                 }
             }
         } else {
-            console.log(`You've lost :(. The word was ${randomWord}`);
-
+            setEndGameMsg(`You've lost :( The word was: `)
+            // console.log(`You've lost :( The word was ${randomWord}`);
         }
-
 
     }
 
-    console.log("==>", wordsFound);
-    console.log("==>", numberOfPlay);
-    console.log("=======>", lettersChosen);
+    const clearState = () => {
+        setEndGameMsg("")
+        setNumberOfPlay(8)
+        setLettersChosen([])
+        setWordsFound([])
+    }
+
 
     return (
         <MDBContainer className='pb-md-5'>
             <MDBRow className='justify-content-center'>
                 <MDBCardTitle className='text-center my-md-5 display-4'>Game</MDBCardTitle>
-                <MDBCol md='3'>
+                <MDBCol md='4'>
                     <MDBCard >
                         <MDBCardBody>
-                            <MDBCardTitle className='text-uppercase'>Pendu</MDBCardTitle>
-                            <MDBCardText className='my-md-4 fw-lighter'>
-                                Comming Soon ...
-                            </MDBCardText>
-                            <MDBInput label='Please enter a letter or a word' onChange={(e) => setInput(e.target.value)} id='form1' type='text' className='mb-md-3' />
-                            {/* {
-                                wordsFound
+                            <MDBCardTitle className='text-uppercase text-center mb-md-5'>Pendu</MDBCardTitle>
+
+                            {
+                                EndGameMsg
                                     ?
-                                    <p className='text-center'>{wordsFound.join(" ")}  </p>
+                                    <>
+                                        <p>{EndGameMsg}<strong>{randomWord}</strong></p>
+                                        <MDBBtn onClick={clearState}>Retry</MDBBtn>
+                                    </>
                                     :
-                                    null
-                            } */}
-                            <MDBBtn onClick={findMysteryWord}>Calculate</MDBBtn>
+                                    <>
+                                        <MDBRow className="input-group justify-content-center">
+                                            <MDBCol size='8' className="input-group-prepend px-0">
+                                                <MDBInput
+                                                    label='Please enter a letter or a word'
+                                                    onChange={(e) => setInput(e.target.value)}
+                                                    id='form1' type='text'
+                                                    className='mb-md-3 form-control'
+                                                />
+                                            </MDBCol>
+                                            <MDBCol size='2' className="input-group-prepend px-0">
+                                                <MDBBtn onClick={findMysteryWord}>
+                                                    Enter
+                                                </MDBBtn>
+                                            </MDBCol>
+                                        </MDBRow>
+
+                                        <MDBCardText className=' text-center mt-md-4'>Your
+                                            <strong> MYSTERY WORD </strong> has
+                                            <strong className='text-success h5'> {randomWord.length} </strong>
+                                            letters,
+                                            <br />
+                                            and you have
+                                            <strong className='text-danger h5'> {numberOfPlay} </strong>
+                                            number of tries.
+                                        </MDBCardText>
+
+                                        <MDBCardText className='display-6 my-md-4 text-center'>{wordsFound.join(" ")}</MDBCardText>
+                                        <MDBCardText className='text-center'> {lettersChosenMsg}
+                                            <br />
+                                            <strong className='text-uppercase'>{lettersChosen.join(", ")}</strong>
+                                        </MDBCardText>
+                                        <MDBCardText className='text-danger h5 fw-lighter px-md-4'>{errMsg}</MDBCardText>
+                                    </>
+                            }
+
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>
-
             </MDBRow>
         </MDBContainer>
     )
