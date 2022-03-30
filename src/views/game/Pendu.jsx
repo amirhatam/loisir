@@ -9,56 +9,80 @@ export const Pendu = () => {
     const [lettersChosen, setLettersChosen] = useState([])
     const [wordsFound, setWordsFound] = useState([])
     const [errMsg, setErrMsg] = useState([])
+    const [numberOfPlay, setNumberOfPlay] = useState(10)
 
 
     const findMysteryWord = () => {
-        if (input.length === 1) {
-            if (lettersChosen.indexOf(input) === -1) {
-                lettersChosen.push(input)
+
+        let numOfPlay = numberOfPlay
+        if (numberOfPlay > 1) {
+
+            if (input.length === 1) {
+                if (lettersChosen.indexOf(input) === -1) {
+                    lettersChosen.push(input)
+                    numOfPlay--
+                    setNumberOfPlay(numOfPlay)
+                } else {
+                    console.log("You've already tried with that letter. I'm not counting this try because I'm nice");
+                    setErrMsg("You've already tried with that letter. I'm not counting this try because I'm nice");
+                    return;
+                }
+
+                const result = []
+                if (lettersChosen.length <= 1) {
+                    randomWord.split("").map((e, i) => {
+                        if (!wordsFound.length > 0) {
+                            if (input.indexOf(e) === -1) {
+                                return result.push("_")
+                            } else {
+                                return result.push(e)
+                            }
+                        } else {
+                            if (input.indexOf(e) === -1) {
+                                // if (wordsFound[i] === "_") {
+                                return result.push("_")
+                                // }
+                            } else {
+                                return result.push(e)
+                            }
+                        }
+                    }
+                    )
+                } else {
+                    randomWord.split("").map((e, i) => {
+                        if (lettersChosen.indexOf(e) === -1) {
+                            return result.push("_")
+                        } else {
+                            return result.push(e)
+                        }
+
+                    })
+                    if (result.join("") === randomWord) {
+                        console.log("You've won!! Congratulations!! The word was:", randomWord);
+
+                    }
+                }
+
+
+                return setWordsFound(result)
+
             } else {
-                console.log("You've already tried with that letter. I'm not counting this try because I'm nice");
-                setErrMsg("You've already tried with that letter. I'm not counting this try because I'm nice");
-                return;
-            }
-        }
-
-
-        const result = []
-        if (lettersChosen.length <= 1) {
-            randomWord.split("").map((e, i) => {
-                if (!wordsFound.length > 0) {
-                    if (input.indexOf(e) === -1) {
-                        return result.push("_")
-                    } else {
-                        return result.push(e)
-                    }
-                } else {
-                    if (input.indexOf(e) === -1) {
-                        // if (wordsFound[i] === "_") {
-                        return result.push("_")
-                        // }
-                    } else {
-                        return result.push(e)
-                    }
+                if (input == randomWord) {
+                    console.log("You've won!! Congratulations!! The word was:", randomWord);
+                    numOfPlay--
+                    setNumberOfPlay(numOfPlay)
                 }
             }
-            )
         } else {
-            randomWord.split("").map((e, i) => {
-                if (lettersChosen.indexOf(e) === -1) {
-                    return result.push("_")
-                } else {
-                    return result.push(e)
-                }
+            console.log(`You've lost :(. The word was ${randomWord}`);
 
-            }
-            )
         }
 
-        return setWordsFound(result)
+
     }
 
     console.log("==>", wordsFound);
+    console.log("==>", numberOfPlay);
     console.log("=======>", lettersChosen);
 
     return (
