@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { MDBContainer, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn, MDBInput, MDBCol, MDBRow, MDBRipple, MDBCardImage } from 'mdb-react-ui-kit';
-// const randomWords = require('random-words');
+import React, { useState } from 'react';
+import { MDBContainer, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn, MDBInput, MDBCol, MDBRow, MDBRipple, MDBCardImage, MDBIcon } from 'mdb-react-ui-kit';
+const randomWords = require('random-words');
 import PenduOne from "../../assets/pic/pendu/Le-Pendu-1.png"
 import PenduTwo from "../../assets/pic/pendu/Le-Pendu-2.png"
 import PenduThree from "../../assets/pic/pendu/Le-Pendu-3.png"
@@ -11,7 +11,7 @@ import PenduSeven from "../../assets/pic/pendu/Le-Pendu-7.png"
 
 
 export const Pendu = () => {
-    const [randomWord, setRandomWord] = useState("test")
+    const [randomWord, setRandomWord] = useState(randomWords)
     const [numberOfPlay, setNumberOfPlay] = useState(6)
     const [input, setInput] = useState("")
     const [lettersChosen, setLettersChosen] = useState([])
@@ -23,12 +23,13 @@ export const Pendu = () => {
     const [EndGameMsg, setEndGameMsg] = useState("")
     const [lettersChosenMsg, setLettersChosenMsg] = useState("")
 
-
     if (wordsFound.length === 0) {
         for (let i = 0; i < randomWord.length; i++) {
             wordsFound.push("_")
         }
     }
+
+    var mysteryWord = randomWords();
 
     // useEffect(() => {
 
@@ -60,7 +61,6 @@ export const Pendu = () => {
             setPenduImg([PenduOne])
         }
     }
-
     const findMysteryWord = () => {
 
         let numOfPlay = numberOfPlay
@@ -130,12 +130,11 @@ export const Pendu = () => {
                 }
             }
         } else {
-            setEndGameMsg(`You've lost :( The word was: `)
+            setEndGameMsg(`Sorry, you just lost the game, the word was : `)
             // console.log(`You've lost :( The word was ${randomWord}`);
         }
 
     }
-
     //Rematch
     const clearState = () => {
         setEndGameMsg("")
@@ -143,6 +142,7 @@ export const Pendu = () => {
         setLettersChosen([])
         setWordsFound([])
         setPenduImg([PenduOne])
+        setRandomWord(mysteryWord)
     }
 
     //Accept only alphabets values in input 
@@ -165,14 +165,21 @@ export const Pendu = () => {
                 <MDBCol md='4'>
                     <MDBCard >
                         <MDBCardBody>
-                            <MDBCardTitle className='text-uppercase text-center mb-md-5'>Pendu</MDBCardTitle>
+                            <MDBCardTitle className='text-uppercase text-center mb-md-5'>HANGMAN</MDBCardTitle>
 
                             {
                                 EndGameMsg
                                     ?
                                     <>
-                                        <p>{EndGameMsg}<strong>{randomWord}</strong></p>
-                                        <MDBBtn onClick={clearState}>Retry</MDBBtn>
+                                        <MDBCardText className='h4 fw-lighter my-md-4 text-center'>{EndGameMsg}
+                                            <strong className='text-uppercase'>{randomWord}</strong>
+                                        </MDBCardText>
+                                        <MDBRow className='justify-content-center'>
+                                            <MDBCol size='5'>
+                                                <MDBBtn onClick={clearState}>Try again <MDBIcon className='fa-lg ' far icon="smile-wink" />
+                                                </MDBBtn>
+                                            </MDBCol>
+                                        </MDBRow>
                                         <MDBRow className='justify-content-center'>
                                             <MDBCol size='6'>
                                                 <MDBCardImage src={PenduSeven} fluid alt='...' />
@@ -219,8 +226,6 @@ export const Pendu = () => {
                                                 <MDBCardImage src={penduImg} fluid alt='...' />
                                             </MDBCol>
                                         </MDBRow>
-
-
                                         <MDBCardText className='text-danger h5 fw-lighter px-md-4'>{errMsg}</MDBCardText>
                                     </>
                             }

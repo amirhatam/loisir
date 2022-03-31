@@ -20,6 +20,19 @@ export default function HomeCards() {
             </MDBCol>
 
             <MDBCol size="3">
+                <MDBCard background='secondary' className='text-white mb-3 card-container' >
+                    <MDBCardHeader>
+                        <MDBCardLink href='/games' className='txt-white'>
+                            The Game
+                        </MDBCardLink>
+                    </MDBCardHeader>
+                    <MDBCardBody>
+                        <MDBCardTitle>HANGMAN</MDBCardTitle>
+                    </MDBCardBody>
+                </MDBCard>
+            </MDBCol>
+
+            <MDBCol size="3">
                 <MDBCard background='success' className='text-white mb-3 card-container' >
                     <MDBCardHeader >
                         <MDBCardLink href='/calculator' className='txt-white'>
@@ -87,19 +100,7 @@ export default function HomeCards() {
                 </MDBCard>
             </MDBCol>
 
-            {/* <MDBCol size="3">
-                <MDBCard background='secondary' className='text-white mb-3 card-container' >
-                    <MDBCardHeader>
-                        <MDBCardLink href='/calculator' className='txt-white'>
-                            The Calculator
-                        </MDBCardLink>
-                    </MDBCardHeader>
-                    <MDBCardBody>
-                        <MDBCardTitle>Secondary card title</MDBCardTitle>
 
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol> */}
 
         </MDBRow>
     );
