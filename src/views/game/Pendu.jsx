@@ -11,6 +11,7 @@ export const Pendu = () => {
     const [wordsFound, setWordsFound] = useState([])
 
     const [errMsg, setErrMsg] = useState([])
+    const [errValueMsg, setErrValueMsg] = useState("")
     const [EndGameMsg, setEndGameMsg] = useState("")
     const [lettersChosenMsg, setLettersChosenMsg] = useState("")
 
@@ -95,6 +96,7 @@ export const Pendu = () => {
 
     }
 
+    //Rematch
     const clearState = () => {
         setEndGameMsg("")
         setNumberOfPlay(8)
@@ -102,6 +104,18 @@ export const Pendu = () => {
         setWordsFound([])
     }
 
+    //Accept only alphabets values in input 
+    const getInputValue = (e) => {
+        const userValue = e.target.value
+        if (userValue.match(/[a-z]/i)) {
+            setInput(userValue)
+            setErrValueMsg("");
+        } else if (userValue && userValue.match(/[a-z]/i) === null) {
+            setErrValueMsg("Please enter alphabets only");
+        } else if (!userValue) {
+            setErrValueMsg("");
+        }
+    }
 
     return (
         <MDBContainer className='pb-md-5'>
@@ -125,7 +139,7 @@ export const Pendu = () => {
                                             <MDBCol size='8' className="input-group-prepend px-0">
                                                 <MDBInput
                                                     label='Please enter a letter or a word'
-                                                    onChange={(e) => setInput(e.target.value)}
+                                                    onChange={getInputValue}
                                                     id='form1' type='text'
                                                     className='mb-md-3 form-control'
                                                 />
@@ -136,6 +150,7 @@ export const Pendu = () => {
                                                 </MDBBtn>
                                             </MDBCol>
                                         </MDBRow>
+                                        <MDBCardText className='text-danger fw-lighter text-center'>{errValueMsg}</MDBCardText>
 
                                         <MDBCardText className=' text-center mt-md-4'>Your
                                             <strong> MYSTERY WORD </strong> has
