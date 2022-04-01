@@ -4,6 +4,8 @@
   "description": "template for mdb-react-ui-kit",
   "private": true,
   "dependencies": {
+    "en-dictionary": "^1.2.4",
+    "en-wordnet": "^2.0.6",
     "mdb-react-ui-kit": "^1.0.0-beta5",
     "prompt": "^1.2.2",
     "random-words": "^1.1.2",

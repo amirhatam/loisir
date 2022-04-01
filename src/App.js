@@ -14,7 +14,7 @@ import Tribonacci from './views/calculator/Tribonacci';
 import { Footer } from './components/Footer';
 import ContactPage from './views/ContactPage';
 import SquareNumbers from './views/calculator/SquareNumbers';
-import { Pendu } from './views/game/Pendu';
+import { Pendu } from './views/game/pendu/Pendu';
 
 function App() {
   return (
