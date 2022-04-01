@@ -1,7 +1,10 @@
-import { MDBBtn, MDBCardImage, MDBCardText, MDBCol, MDBRow } from 'mdb-react-ui-kit'
+import { MDBBtn, MDBCardImage, MDBCardText, MDBCol, MDBInput, MDBRow } from 'mdb-react-ui-kit'
 import React from 'react'
 
 export const Playing = (props) => {
+
+    // console.log("lettersChosen =>", props.lettersChosen);
+    // console.log("wordsFound =>", props.wordsFound);
     return (
         <>
             <MDBRow className="input-group justify-content-center">
@@ -34,13 +37,14 @@ export const Playing = (props) => {
                 number of tries.
             </MDBCardText>
 
-            <MDBCardText className='display-6 my-md-4 text-center'>{wordsFound.join(" ")}</MDBCardText>
+            <MDBCardText className='display-6 my-md-4 text-center'>{props.wordsFound.join(" ")}</MDBCardText>
             <MDBRow className='justify-content-center'>
                 <MDBCol size='6'>
                     <MDBCardImage src={props.penduImg} fluid alt='...' />
                 </MDBCol>
             </MDBRow>
-            <MDBCardText className='text-center'> {props.lettersChosenMsg}
+            <MDBCardText className='text-center'>
+                {props.lettersChosenMsg}
                 <br />
                 <strong className='text-uppercase'>{props.lettersChosen.join(", ")}</strong>
             </MDBCardText>

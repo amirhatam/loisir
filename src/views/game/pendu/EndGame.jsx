@@ -1,3 +1,4 @@
+import { MDBBtn, MDBCardText, MDBCol, MDBRow } from 'mdb-react-ui-kit'
 import React from 'react'
 import PenduSeven from "../../../assets/pic/pendu/Le-Pendu-7.png"
 import Win from "../../../assets/pic/smile.webp"

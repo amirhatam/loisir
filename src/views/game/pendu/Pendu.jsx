@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import { MDBContainer, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn, MDBInput, MDBCol, MDBRow, MDBRipple, MDBCardImage, MDBIcon } from 'mdb-react-ui-kit';
 const randomWords = require('random-words');
 import { Playing } from './Playing';
+// import { EndGame } from './EndGame';
 // import { findMysteryWord } from './comparisonFunc';
 import { setImagesFunc } from './imagesFunc';
 
+import PenduSeven from "../../../assets/pic/pendu/Le-Pendu-7.png"
+import Win from "../../../assets/pic/smile.webp"
 
 
 import PenduOne from "../../../assets/pic/pendu/Le-Pendu-1.png"
 
-import { EndGame } from './EndGame';
+
 
 
 export const Pendu = () => {
@@ -35,6 +38,7 @@ export const Pendu = () => {
         }
     }
 
+
     const findMysteryWord = () => {
 
         let numOfPlay = numberOfPlay
@@ -54,7 +58,7 @@ export const Pendu = () => {
                 if (!randomWord.includes(input)) {
                     numOfPlay--
                     setNumberOfPlay(numOfPlay)
-                    setImagesFunc(numOfPlay)
+                    setImagesFunc(numOfPlay, setPenduImg)
                 }
 
                 const result = []
@@ -134,6 +138,8 @@ export const Pendu = () => {
         }
     }
     console.log(randomWord);
+    console.log(lettersChosenMsg);
+
 
 
 
@@ -148,10 +154,84 @@ export const Pendu = () => {
                             {
                                 EndGameMsg
                                     ?
-                                    <EndGame />
+                                    // <EndGame />
+                                    <>
+                                        <MDBCardText className='h4 fw-lighter my-md-4 text-center'>{EndGameMsg}
+                                            <strong className='text-uppercase'>{randomWord}</strong>
+                                        </MDBCardText>
+                                        <MDBRow className='justify-content-center mb-md-5'>
+                                            <MDBCol size='6'>
+                                                {
+                                                    EndGameMsg === `Sorry, you just lost the game, the word was : `
+                                                        ?
+                                                        <MDBCardImage src={PenduSeven} fluid alt='...' />
+                                                        :
+                                                        <MDBCardImage src={Win} fluid alt='...' />
 
+                                                }
+                                            </MDBCol>
+                                        </MDBRow>
+                                        <MDBRow className='justify-content-center'>
+                                            <MDBCol size='5'>
+                                                <MDBBtn onClick={clearState}>Try again <MDBIcon className='fa-lg ' far icon="smile-wink" />
+                                                </MDBBtn>
+                                            </MDBCol>
+                                        </MDBRow>
+                                    </>
                                     :
-                                    <Playing />
+                                    // <>
+                                    //     <MDBRow className="input-group justify-content-center">
+                                    //         <MDBCol size='8' className="input-group-prepend px-0">
+                                    //             <MDBInput
+                                    //                 label='Please enter a letter or a word'
+                                    //                 onChange={getInputValue}
+                                    //                 id='form1'
+                                    //                 type='text'
+                                    //                 className='mb-md-3 form-control'
+                                    //             />
+                                    //         </MDBCol>
+                                    //         <MDBCardText className='text-danger text-center h5 fw-lighter px-md-4'>{errMsg} </MDBCardText>
+
+                                    //         <MDBCol size='2' className="input-group-prepend px-0">
+                                    //             <MDBBtn onClick={findMysteryWord}>
+                                    //                 Enter
+                                    //             </MDBBtn>
+                                    //         </MDBCol>
+                                    //     </MDBRow>
+                                    //     <MDBCardText className='text-danger fw-lighter text-center'>{errValueMsg}</MDBCardText>
+
+                                    //     <MDBCardText className=' text-center mt-md-4'>Your
+                                    //         <strong> MYSTERY WORD </strong> has
+                                    //         <strong className='text-success h5'> {randomWord.length} </strong>
+                                    //         letters,
+                                    //         <br />
+                                    //         and you have
+                                    //         <strong className='text-danger h5'> {numberOfPlay} </strong>
+                                    //         number of tries.
+                                    //     </MDBCardText>
+
+                                    //     <MDBCardText className='display-6 my-md-4 text-center'>{wordsFound.join(" ")}</MDBCardText>
+                                    //     <MDBRow className='justify-content-center'>
+                                    //         <MDBCol size='6'>
+                                    //             <MDBCardImage src={penduImg} fluid alt='...' />
+                                    //         </MDBCol>
+                                    //     </MDBRow>
+                                    //     <MDBCardText className='text-center'> {lettersChosenMsg}
+                                    //         <br />
+                                    //         <strong className='text-uppercase'>{lettersChosen.join(", ")}</strong>
+                                    //     </MDBCardText>
+                                    // </>
+                                    <Playing
+                                        getInputValue={getInputValue}
+                                        findMysteryWord={findMysteryWord}
+                                        errValueMsg={errValueMsg}
+                                        randomWord={randomWord}
+                                        numberOfPlay={numberOfPlay}
+                                        penduImg={penduImg}
+                                        wordsFound={wordsFound}
+                                        lettersChosenMsg={lettersChosenMsg}
+                                        lettersChosen={lettersChosen}
+                                    />
                             }
                         </MDBCardBody>
                     </MDBCard>
