@@ -1,9 +1,11 @@
-import { MDBBtn, MDBCardText, MDBCol, MDBRow } from 'mdb-react-ui-kit'
+import { MDBBtn, MDBCardImage, MDBCardText, MDBCol, MDBIcon, MDBRow } from 'mdb-react-ui-kit'
 import React from 'react'
 import PenduSeven from "../../../assets/pic/pendu/Le-Pendu-7.png"
 import Win from "../../../assets/pic/smile.webp"
 
 export const EndGame = (props) => {
+
+
     return (
         <>
             <MDBCardText className='h4 fw-lighter my-md-4 text-center'>{props.EndGameMsg}

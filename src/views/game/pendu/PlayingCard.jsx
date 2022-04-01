@@ -3,8 +3,6 @@ import React from 'react'
 
 export const Playing = (props) => {
 
-    // console.log("lettersChosen =>", props.lettersChosen);
-    // console.log("wordsFound =>", props.wordsFound);
     return (
         <>
             <MDBRow className="input-group justify-content-center">
