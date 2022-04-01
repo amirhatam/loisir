@@ -1,4 +1,6 @@
 import React from 'react'
+import PenduSeven from "../../../assets/pic/pendu/Le-Pendu-7.png"
+import Win from "../../../assets/pic/smile.webp"
 
 export const EndGame = (props) => {
     return (
@@ -11,9 +13,9 @@ export const EndGame = (props) => {
                     {
                         props.EndGameMsg === `Sorry, you just lost the game, the word was : `
                             ?
-                            <MDBCardImage src={props.PenduSeven} fluid alt='...' />
+                            <MDBCardImage src={PenduSeven} fluid alt='...' />
                             :
-                            <MDBCardImage src={props.Win} fluid alt='...' />
+                            <MDBCardImage src={Win} fluid alt='...' />
 
                     }
                 </MDBCol>
