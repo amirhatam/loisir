@@ -1,7 +1,7 @@
 import { MDBBtn, MDBCardImage, MDBCardText, MDBCol, MDBIcon, MDBRow } from 'mdb-react-ui-kit'
 import React from 'react'
 import PenduSeven from "../../../assets/pic/pendu/Le-Pendu-7.png"
-import Win from "../../../assets/pic/smile.webp"
+import Win from "../../../assets/pic/winner.gif"
 
 export const EndGame = (props) => {
 
@@ -11,6 +11,7 @@ export const EndGame = (props) => {
             <MDBCardText className='h4 fw-lighter my-md-4 text-center'>{props.EndGameMsg}
                 <strong className='text-uppercase'>{props.randomWord}</strong>
             </MDBCardText>
+
             <MDBRow className='justify-content-center mb-md-5'>
                 <MDBCol size='6'>
                     {
@@ -23,9 +24,10 @@ export const EndGame = (props) => {
                     }
                 </MDBCol>
             </MDBRow>
-            <MDBRow className='justify-content-center'>
-                <MDBCol size='5'>
-                    <MDBBtn onClick={props.clearState}>Try again <MDBIcon className='fa-lg ' far icon="smile-wink" />
+            <MDBRow>
+                <MDBCol className='text-center'>
+                    <MDBBtn onClick={props.clearState}>Try again
+                        <MDBIcon className='fa-lg ' far icon="smile-wink" />
                     </MDBBtn>
                 </MDBCol>
             </MDBRow>

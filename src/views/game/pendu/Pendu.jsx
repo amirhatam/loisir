@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { MDBContainer, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn, MDBInput, MDBCol, MDBRow, MDBRipple, MDBCardImage, MDBIcon } from 'mdb-react-ui-kit';
+import React, { useState } from 'react';
+import { MDBContainer, MDBCard, MDBCardBody, MDBCardTitle, MDBCol, MDBRow } from 'mdb-react-ui-kit';
 const randomWords = require('random-words');
 import { Playing } from './PlayingCard';
 import { EndGame } from './EndGameCard';
@@ -19,10 +19,17 @@ export const Pendu = () => {
     const [wordsFound, setWordsFound] = useState([])
     const [penduImg, setPenduImg] = useState([PenduOne])
 
-    const [synonyms, setSynonyms] = useState([])
-    const [definition, setDefinition] = useState([])
+    //Dictionary
+    const [nounDefinition, setNounDefinition] = useState([])
+    const [nounSynonyms, setNounSynonyms] = useState([])
+    const [nounAntonyms, setNounAntonyms] = useState([])
+    const [verbDefinition, setVerbDefinition] = useState([])
+    const [verbSynonyms, setVerbSynonyms] = useState([])
+    const [verbAntonyms, setVerbAntonyms] = useState([])
 
 
+
+    //Message for user 
     const [errMsg, setErrMsg] = useState([])
     const [errValueMsg, setErrValueMsg] = useState("")
     const [EndGameMsg, setEndGameMsg] = useState("")
@@ -40,10 +47,28 @@ export const Pendu = () => {
 
 
 
-    Dictionary(setSynonyms, setDefinition)
+    Dictionary(
+        randomWord,
+        setNounDefinition,
+        setNounSynonyms,
+        setNounAntonyms,
+        setVerbDefinition,
+        setVerbSynonyms,
+        setVerbAntonyms
+    )
 
-    // console.log(definition);
-    // console.log(synonyms);
+    // console.log("nounDefinition", nounDefinition);
+    // console.log("nounSynonyms", nounSynonyms);
+    // console.log("nounAntonyms", nounAntonyms);
+    // console.log("verbDefinition", verbDefinition);
+    // console.log("verbSynonyms", verbSynonyms);
+    // console.log("verbAntonyms", verbAntonyms);
+
+
+
+
+
+
 
     const findMysteryWord = () => {
 
@@ -97,7 +122,7 @@ export const Pendu = () => {
 
                     })
                     if (result.join("") === randomWord) {
-                        setEndGameMsg("Congratulations!! You've won!! The word was: ",);
+                        setEndGameMsg("Congratulations !! You've won !! The word was: ",);
                     }
                 }
 
@@ -105,7 +130,7 @@ export const Pendu = () => {
 
             } else {  // Part input value (Word)
                 if (input == randomWord) {
-                    setEndGameMsg("Congratulations!! You've won!! The word was: ");
+                    setEndGameMsg("Congratulations !! You've won !! The word was: ");
                     setNumberOfPlay(numOfPlay)
                 } else {
                     setErrMsg("")
@@ -151,39 +176,47 @@ export const Pendu = () => {
     console.log(randomWord);
 
     return (
-        <MDBContainer className='pb-md-5'>
-            <MDBRow className='justify-content-center'>
-                <MDBCardTitle className='text-center my-md-5 display-4'>Game</MDBCardTitle>
-                <MDBCol md='5'>
-                    <MDBCard >
-                        <MDBCardBody>
-                            <MDBCardTitle className='text-uppercase text-center mb-md-5'>HANGMAN</MDBCardTitle>
-                            {
-                                EndGameMsg
-                                    ?
-                                    <EndGame
-                                        EndGameMsg={EndGameMsg}
-                                        randomWord={randomWord}
-                                        clearState={clearState}
-                                    />
-                                    :
-                                    < Playing
-                                        getInputValue={getInputValue}
-                                        findMysteryWord={findMysteryWord}
-                                        errValueMsg={errValueMsg}
-                                        errMsg={errMsg}
-                                        randomWord={randomWord}
-                                        numberOfPlay={numberOfPlay}
-                                        penduImg={penduImg}
-                                        wordsFound={wordsFound}
-                                        lettersChosenMsg={lettersChosenMsg}
-                                        lettersChosen={lettersChosen}
-                                    />
-                            }
-                        </MDBCardBody>
-                    </MDBCard>
-                </MDBCol>
-            </MDBRow>
-        </MDBContainer>
+        <section style={{ backgroundColor: "#4B515D" }}>
+            <MDBContainer className='pb-md-5'>
+                <MDBRow className='justify-content-center'>
+                    <MDBCardTitle className='text-center text-light my-md-5 display-4'>Game</MDBCardTitle>
+                    <MDBCol >
+                        <MDBCard >
+                            <MDBCardBody>
+                                <MDBCardTitle className='text-uppercase text-center mb-md-5'>HANGMAN</MDBCardTitle>
+                                {
+                                    EndGameMsg
+                                        ?
+                                        <EndGame
+                                            EndGameMsg={EndGameMsg}
+                                            randomWord={randomWord}
+                                            clearState={clearState}
+                                        />
+                                        :
+                                        < Playing
+                                            getInputValue={getInputValue}
+                                            findMysteryWord={findMysteryWord}
+                                            errValueMsg={errValueMsg}
+                                            errMsg={errMsg}
+                                            randomWord={randomWord}
+                                            numberOfPlay={numberOfPlay}
+                                            penduImg={penduImg}
+                                            wordsFound={wordsFound}
+                                            lettersChosenMsg={lettersChosenMsg}
+                                            lettersChosen={lettersChosen}
+                                            nounDefinition={nounDefinition}
+                                            nounSynonyms={nounSynonyms}
+                                            nounAntonyms={nounAntonyms}
+                                            verbDefinition={verbDefinition}
+                                            verbSynonyms={verbSynonyms}
+                                            verbAntonyms={verbAntonyms}
+                                        />
+                                }
+                            </MDBCardBody>
+                        </MDBCard>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer>
+        </section>
     )
 }
