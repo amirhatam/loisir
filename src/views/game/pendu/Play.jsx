@@ -1,16 +1,11 @@
 import { MDBBtn, MDBCardImage, MDBCardText, MDBCol, MDBInput, MDBRow } from 'mdb-react-ui-kit'
 import React from 'react'
 
-
-
-export const Playing = (props) => {
-
+export const Play = (props) => {
 
     return (
         <>
-
             <MDBRow className="input-group justify-content-center">
-
                 <MDBCol size='8' className="input-group-prepend px-0">
                     <MDBInput
                         label='Please enter a letter or a word'
@@ -20,6 +15,7 @@ export const Playing = (props) => {
                         className='mb-md-3 form-control'
                     />
                 </MDBCol>
+                <MDBCardText className='text-danger text-center h5 fw-lighter px-md-4'>{props.errMsg} </MDBCardText>
 
                 <MDBCol size='2' className="input-group-prepend px-0">
                     <MDBBtn onClick={props.findMysteryWord}>
@@ -27,7 +23,6 @@ export const Playing = (props) => {
                     </MDBBtn>
                 </MDBCol>
             </MDBRow>
-            <MDBCardText className='text-danger text-center fw-lighter px-md-4'>{props.errMsg} </MDBCardText>
             <MDBCardText className='text-danger fw-lighter text-center'>{props.errValueMsg}</MDBCardText>
 
             <MDBCardText className=' text-center mt-md-4'>Your
@@ -51,6 +46,7 @@ export const Playing = (props) => {
                 <br />
                 <strong className='text-uppercase'>{props.lettersChosen.join(", ")}</strong>
             </MDBCardText>
+
         </>
     )
 }

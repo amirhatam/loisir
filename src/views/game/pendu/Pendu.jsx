@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MDBContainer, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn, MDBInput, MDBCol, MDBRow, MDBRipple, MDBCardImage, MDBIcon } from 'mdb-react-ui-kit';
 const randomWords = require('random-words');
 import { Playing } from './PlayingCard';
 import { EndGame } from './EndGameCard';
-// import { findMysteryWord } from './comparisonFunc';
 import { setImagesFunc } from './imagesFunc';
-
-import PenduSeven from "../../../assets/pic/pendu/Le-Pendu-7.png"
-import Win from "../../../assets/pic/smile.webp"
+import { Dictionary } from './Dictionary';
 
 
 import PenduOne from "../../../assets/pic/pendu/Le-Pendu-1.png"
-
 
 
 
@@ -22,6 +18,10 @@ export const Pendu = () => {
     const [lettersChosen, setLettersChosen] = useState([])
     const [wordsFound, setWordsFound] = useState([])
     const [penduImg, setPenduImg] = useState([PenduOne])
+
+    const [synonyms, setSynonyms] = useState([])
+    const [definition, setDefinition] = useState([])
+
 
     const [errMsg, setErrMsg] = useState([])
     const [errValueMsg, setErrValueMsg] = useState("")
@@ -39,7 +39,15 @@ export const Pendu = () => {
     }
 
 
+
+    Dictionary(setSynonyms, setDefinition)
+
+    // console.log(definition);
+    // console.log(synonyms);
+
     const findMysteryWord = () => {
+
+        // getMeaning()
 
         let numOfPlay = numberOfPlay
 
@@ -89,7 +97,7 @@ export const Pendu = () => {
 
                     })
                     if (result.join("") === randomWord) {
-                        setEndGameMsg("You've won!! Congratulations!! The word was: ",);
+                        setEndGameMsg("Congratulations!! You've won!! The word was: ",);
                     }
                 }
 
@@ -97,7 +105,7 @@ export const Pendu = () => {
 
             } else {  // Part input value (Word)
                 if (input == randomWord) {
-                    setEndGameMsg("You've won!! Congratulations!! The word was: ");
+                    setEndGameMsg("Congratulations!! You've won!! The word was: ");
                     setNumberOfPlay(numOfPlay)
                 } else {
                     setErrMsg("")
@@ -112,6 +120,8 @@ export const Pendu = () => {
         }
 
     }
+
+
 
 
     //Rematch
@@ -144,7 +154,7 @@ export const Pendu = () => {
         <MDBContainer className='pb-md-5'>
             <MDBRow className='justify-content-center'>
                 <MDBCardTitle className='text-center my-md-5 display-4'>Game</MDBCardTitle>
-                <MDBCol md='4'>
+                <MDBCol md='5'>
                     <MDBCard >
                         <MDBCardBody>
                             <MDBCardTitle className='text-uppercase text-center mb-md-5'>HANGMAN</MDBCardTitle>
@@ -157,10 +167,11 @@ export const Pendu = () => {
                                         clearState={clearState}
                                     />
                                     :
-                                    <Playing
+                                    < Playing
                                         getInputValue={getInputValue}
                                         findMysteryWord={findMysteryWord}
                                         errValueMsg={errValueMsg}
+                                        errMsg={errMsg}
                                         randomWord={randomWord}
                                         numberOfPlay={numberOfPlay}
                                         penduImg={penduImg}
