@@ -1,5 +1,5 @@
-import { MDBBtn, MDBCardBody, MDBCardImage, MDBCardText, MDBCardTitle, MDBCol, MDBInput, MDBRow } from 'mdb-react-ui-kit'
-import React, { useEffect, useState } from 'react'
+import { MDBBtn, MDBCardImage, MDBCardText, MDBCol, MDBInput, MDBRow } from 'mdb-react-ui-kit'
+import React from 'react'
 import { AsideLeft } from './card/AsideLeft'
 import { AsideRight } from './card/AsideRight'
 import CardHeader from './card/CardHeader'
@@ -7,116 +7,19 @@ import CardHeader from './card/CardHeader'
 
 
 export const Playing = (props) => {
-    const [definition, setDefinition] = useState('Definition')
-    const [synonyms, setSynonyms] = useState("Synonyms")
-    const [antonyms, setAntonyms] = useState("Antonyms")
-
-
-
-
     // console.log(props.nounSynonyms.length);
     // console.log(props.nounAntonyms.length);
 
     return (
         <>
-            {/* <MDBRow className='justify-content-center'>
-                <MDBCol size='2' className=''>
-                    <MDBCardBody className='px-0'>
-                        <MDBCardTitle>Mystery Word has: </MDBCardTitle>
-                    </MDBCardBody>
-                </MDBCol>
-                <MDBCol size='2' className=''>
-                    <MDBCardBody className='pt-md-1'>
-                        <MDBCardText>
-                            <strong className='text-success display-6'> {props.randomWord.length} </strong>
-                            letters
-                        </MDBCardText>
-                    </MDBCardBody>
-                </MDBCol>
-                <MDBCol size='2' className=''>
-                    <MDBCardBody className='px-0'>
-                        <MDBCardTitle className=''>Your Number Of Tries :</MDBCardTitle>
-                    </MDBCardBody>
-                </MDBCol>
-                <MDBCol size='2' className=''>
-                    <MDBCardBody className='pt-md-1 '>
-                        <MDBCardText>
-                            <strong className='text-danger display-6'> {props.numberOfPlay} </strong>
-                            token
-                        </MDBCardText>
-                    </MDBCardBody>
-                </MDBCol>
-            </MDBRow> */}
+
             <CardHeader
-                randomWord={props.randomWord}
-                numberOfPlay={props.numberOfPlay}
-                nounDefinition={props.nounDefinition}
-                nounSynonyms={props.nounSynonyms}
-                nounAntonyms={props.nounAntonyms}
-                verbDefinition={props.verbDefinition}
-                verbSynonyms={props.verbSynonyms}
-                verbAntonyms={props.verbAntonyms}
+                {...props}
             />
             <MDBRow className=''>
                 <AsideLeft
-                    randomWord={props.randomWord}
-                    numberOfPlay={props.numberOfPlay}
-                    nounDefinition={props.nounDefinition}
-                    nounSynonyms={props.nounSynonyms}
-                    nounAntonyms={props.nounAntonyms}
-                    verbDefinition={props.verbDefinition}
-                    verbSynonyms={props.verbSynonyms}
-                    verbAntonyms={props.verbAntonyms}
+                    {...props}
                 />
-                {/* <MDBCol size='4'>
-                    <MDBCardBody className=' '>
-                        <MDBCardTitle className=''>Noun</MDBCardTitle>
-                    </MDBCardBody>
-                    <MDBCardBody className=' '>
-                        <MDBCardText className='text-muted'>
-                            {
-                                props.nounDefinition.length > 0
-                                    ?
-                                    definition
-                                    :
-                                    null
-                            }
-                        </MDBCardText>
-                        <MDBCardText className=''>
-                            {props.nounDefinition}
-                        </MDBCardText>
-                    </MDBCardBody>
-                    <MDBCardBody className=' '>
-                        <MDBCardText className='text-muted'>
-                            {
-                                props.nounSynonyms.length > 0
-                                    ?
-                                    synonyms
-                                    :
-                                    null
-
-                            }
-                        </MDBCardText>
-                        <MDBCardText className='text-capitalize'>
-                            {props.nounSynonyms.join(" - ")}
-                        </MDBCardText>
-                    </MDBCardBody>
-
-                    <MDBCardBody className=' '>
-                        <MDBCardText className='text-muted'>
-                            {
-                                props.nounAntonyms.length > 0
-                                    ?
-                                    antonyms
-                                    :
-                                    null
-                            }
-                        </MDBCardText>
-                        <MDBCardText className='text-capitalize'>
-                            {props.nounAntonyms.join(" - ")}
-                        </MDBCardText>
-                    </MDBCardBody>
-                </MDBCol> */}
 
                 <MDBCol size='4'>
                     <MDBRow className="input-group justify-content-center">
@@ -132,6 +35,7 @@ export const Playing = (props) => {
 
                         <MDBCol size='2' className="input-group-prepend px-0">
                             <MDBBtn onClick={props.findMysteryWord}>
+                                {/* <MDBBtn onClick={props.clearState}> */}
                                 Enter
                             </MDBBtn>
                         </MDBCol>
@@ -154,64 +58,8 @@ export const Playing = (props) => {
                 </MDBCol>
 
                 <AsideRight
-                    randomWord={props.randomWord}
-                    numberOfPlay={props.numberOfPlay}
-                    nounDefinition={props.nounDefinition}
-                    nounSynonyms={props.nounSynonyms}
-                    nounAntonyms={props.nounAntonyms}
-                    verbDefinition={props.verbDefinition}
-                    verbSynonyms={props.verbSynonyms}
-                    verbAntonyms={props.verbAntonyms}
+                    {...props}
                 />
-                {/* <MDBCol size='4'>
-                    <MDBCardBody className=' '>
-                        <MDBCardTitle className='text-end'>Verb </MDBCardTitle>
-                    </MDBCardBody>
-                    <MDBCardBody className=' '>
-                        <MDBCardText className='text-muted text-end'>
-                            {
-                                props.verbDefinition.length > 0
-                                    ?
-                                    definition
-                                    :
-                                    null
-                            }
-                        </MDBCardText>
-                        <MDBCardText className='text-end'>
-                            {props.verbDefinition}
-                        </MDBCardText>
-                    </MDBCardBody>
-                    <MDBCardBody className=' '>
-                        <MDBCardText className='text-muted text-end'>
-                            {
-                                props.verbSynonyms.length > 0
-                                    ?
-                                    synonyms
-                                    :
-                                    null
-
-                            }
-                        </MDBCardText>
-                        <MDBCardText className='text-capitalize text-end'>
-                            {props.verbSynonyms.join(" - ")}
-                        </MDBCardText>
-                    </MDBCardBody>
-
-                    <MDBCardBody className=' '>
-                        <MDBCardText className='text-muted text-end'>
-                            {
-                                props.verbAntonyms.length > 0
-                                    ?
-                                    antonyms
-                                    :
-                                    null
-                            }
-                        </MDBCardText>
-                        <MDBCardText className='text-capitalize text-end'>
-                            {props.verbAntonyms.join(" - ")}
-                        </MDBCardText>
-                    </MDBCardBody>
-                </MDBCol> */}
 
             </MDBRow>
         </>

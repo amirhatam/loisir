@@ -43,8 +43,6 @@ export const Pendu = () => {
         }
     }
 
-
-
     Dictionary(
         randomWord,
         setNounDefinition,
@@ -54,6 +52,8 @@ export const Pendu = () => {
         setVerbSynonyms,
         setVerbAntonyms
     )
+
+
 
     // console.log("nounDefinition", nounDefinition);
     // console.log("nounSynonyms", nounSynonyms);
@@ -142,21 +142,22 @@ export const Pendu = () => {
 
 
 
-
     //Rematch
-    const clearState = () => {
-        setEndGameMsg("")
-        setNumberOfPlay(6)
-        setLettersChosen([])
-        setWordsFound([])
-        setPenduImg([PenduOne])
-        setRandomWord(mysteryWord)
-        setNounDefinition([])
-        setNounSynonyms([])
-        setNounAntonyms([])
-        setVerbDefinition([])
-        setVerbSynonyms([])
-        setVerbAntonyms([])
+    const clearState = async () => {
+        window.location.reload(false); //Refresh a Page
+        // setEndGameMsg("")
+        // setNumberOfPlay(6)
+        // setLettersChosen([])
+        // setWordsFound([])
+        // setPenduImg([PenduOne])
+        // setRandomWord(mysteryWord)
+        // setNounDefinition([])
+        // setNounSynonyms([])
+        // setNounAntonyms([])
+        // setVerbDefinition([])
+        // setVerbSynonyms([])
+        // setVerbAntonyms([])
+
     }
 
     //Accept only alphabets values in input 
@@ -210,6 +211,7 @@ export const Pendu = () => {
                                             verbDefinition={verbDefinition}
                                             verbSynonyms={verbSynonyms}
                                             verbAntonyms={verbAntonyms}
+                                            clearState={clearState}
                                         />
                                 }
                             </MDBCardBody>
