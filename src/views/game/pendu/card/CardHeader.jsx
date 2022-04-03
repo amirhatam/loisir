@@ -1,21 +1,22 @@
 import { MDBCardBody, MDBCardText, MDBCardTitle, MDBCol, MDBRow } from 'mdb-react-ui-kit';
 import React from 'react';
+import '../../../../assets/styles/FontSize.css'
 
 const CardHeader = (props) => {
     return (
         <>
             <MDBRow className='justify-content-center mb-md-4'>
-                <MDBCol size='4' className=''>
+                <MDBCol className='col-md-4'>
                     <MDBRow>
                         <MDBCol size='6' className=''>
                             <MDBCardBody className='px-0'>
-                                <MDBCardTitle>Mystery Word has: </MDBCardTitle>
+                                <MDBCardTitle className='h6-fs'>Mystery Word has: </MDBCardTitle>
                             </MDBCardBody>
                         </MDBCol>
                         <MDBCol size='5' className=''>
-                            <MDBCardBody className='pt-md-1'>
-                                <MDBCardText>
-                                    <strong className='text-success display-6'> {props.randomWord.length} </strong>
+                            <MDBCardBody className='pt-md-2 px-0'>
+                                <MDBCardText className='h6-fs'>
+                                    <strong className='text-success h4-fs'> {props.randomWord.length} </strong>
                                     letters
                                 </MDBCardText>
                             </MDBCardBody>
@@ -23,18 +24,18 @@ const CardHeader = (props) => {
                     </MDBRow>
                 </MDBCol>
 
-                <MDBCol size='4' className=''>
+                <MDBCol className='col-md-4'>
                     <MDBRow>
                         <MDBCol size='7' className=''>
                             <MDBCardBody className='px-0'>
-                                <MDBCardTitle className=''>Your Number Of Tries :</MDBCardTitle>
+                                <MDBCardTitle className='h6-fs'>Your Number Of Tries :</MDBCardTitle>
                             </MDBCardBody>
                         </MDBCol>
                         <MDBCol size='5' className=''>
 
-                            <MDBCardBody className='pt-md-1 '>
-                                <MDBCardText>
-                                    <strong className='text-danger display-6'> {props.numberOfPlay} </strong>
+                            <MDBCardBody className='pt-md-2 px-0'>
+                                <MDBCardText className='h6-fs'>
+                                    <strong className='text-danger h4-fs'> {props.numberOfPlay} </strong>
                                     token
                                 </MDBCardText>
                             </MDBCardBody>
