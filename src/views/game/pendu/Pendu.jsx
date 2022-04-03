@@ -28,13 +28,11 @@ export const Pendu = () => {
     const [verbAntonyms, setVerbAntonyms] = useState([])
 
 
-
     //Message for user 
     const [errMsg, setErrMsg] = useState([])
     const [errValueMsg, setErrValueMsg] = useState("")
     const [EndGameMsg, setEndGameMsg] = useState("")
     const [lettersChosenMsg, setLettersChosenMsg] = useState("")
-
 
 
     let mysteryWord = randomWords();
@@ -63,10 +61,6 @@ export const Pendu = () => {
     // console.log("verbDefinition", verbDefinition);
     // console.log("verbSynonyms", verbSynonyms);
     // console.log("verbAntonyms", verbAntonyms);
-
-
-
-
 
 
 
@@ -157,6 +151,12 @@ export const Pendu = () => {
         setWordsFound([])
         setPenduImg([PenduOne])
         setRandomWord(mysteryWord)
+        setNounDefinition([])
+        setNounSynonyms([])
+        setNounAntonyms([])
+        setVerbDefinition([])
+        setVerbSynonyms([])
+        setVerbAntonyms([])
     }
 
     //Accept only alphabets values in input 
