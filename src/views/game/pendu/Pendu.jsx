@@ -177,9 +177,9 @@ export const Pendu = () => {
 
     return (
         <section style={{ backgroundColor: "#4B515D" }}>
-            <MDBContainer className='pb-md-5'>
+            <MDBContainer className='pb-5'>
                 <MDBRow className='justify-content-center'>
-                    <MDBCardTitle className='text-center text-light my-md-5 display-4'>Game</MDBCardTitle>
+                    <MDBCardTitle className='text-center text-light my-md-5 my-4 display-4'>Game</MDBCardTitle>
                     <MDBCol >
                         <MDBCard >
                             <MDBCardBody>

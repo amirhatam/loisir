@@ -8,12 +8,12 @@ export const AsideLeft = (props) => {
 
     return (
         <>
-            <MDBCol size='4'>
+            <MDBCol className='col-md-4 col-12'>
                 <MDBCardBody className=' '>
-                    <MDBCardTitle className=''>Noun</MDBCardTitle>
+                    <MDBCardTitle className='h4-fs fw-lighter text-primary'>Noun</MDBCardTitle>
                 </MDBCardBody>
                 <MDBCardBody className=' '>
-                    <MDBCardText className='text-muted'>
+                    <MDBCardText className='text-muted h6-fs'>
                         {
                             props.nounDefinition.length > 0
                                 ?
@@ -22,12 +22,12 @@ export const AsideLeft = (props) => {
                                 null
                         }
                     </MDBCardText>
-                    <MDBCardText className=''>
+                    <MDBCardText className='h5-fs'>
                         {props.nounDefinition}
                     </MDBCardText>
                 </MDBCardBody>
                 <MDBCardBody className=' '>
-                    <MDBCardText className='text-muted'>
+                    <MDBCardText className='text-muted h6-fs'>
                         {
                             props.nounSynonyms.length > 0
                                 ?
@@ -37,13 +37,13 @@ export const AsideLeft = (props) => {
 
                         }
                     </MDBCardText>
-                    <MDBCardText className='text-capitalize'>
+                    <MDBCardText className='text-capitalize h5-fs'>
                         {props.nounSynonyms.join(" - ")}
                     </MDBCardText>
                 </MDBCardBody>
 
                 <MDBCardBody className=' '>
-                    <MDBCardText className='text-muted'>
+                    <MDBCardText className='text-muted h6-fs'>
                         {
                             props.nounAntonyms.length > 0
                                 ?
@@ -52,7 +52,7 @@ export const AsideLeft = (props) => {
                                 null
                         }
                     </MDBCardText>
-                    <MDBCardText className='text-capitalize'>
+                    <MDBCardText className='text-capitalize h5-fs'>
                         {props.nounAntonyms.join(" - ")}
                     </MDBCardText>
                 </MDBCardBody>

@@ -21,7 +21,7 @@ export default function Jeux() {
                             </MDBRipple>
                             <MDBCardBody>
                                 <MDBCardTitle className='text-uppercase'>Jeu des petits chevaux</MDBCardTitle>
-                                <MDBCardText className='fw-lighter text-justify'>
+                                <MDBCardText className='lighter text-justify'>
                                     Le jeu des petits chevaux est un jeu qui consiste à déplacer plusieurs pions par joueur, et à les emmener sur la partie réservée à leur couleur. Le premier joueur qui arrive sur la dernière case triangulaire remporte la partie.
                                 </MDBCardText>
                                 <MDBBtn href='/games/petits-chevaux' className='mt-md-4'>Enter</MDBBtn>

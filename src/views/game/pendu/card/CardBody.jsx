@@ -4,7 +4,7 @@ import { MDBBtn, MDBCardImage, MDBCardText, MDBCol, MDBInput, MDBRow } from 'mdb
 export const CardBody = (props) => {
     return (
         <>
-            <MDBCol size='4'>
+            <MDBCol className='col-md-4 col-12'>
                 <MDBRow className="input-group justify-content-center">
                     <MDBCol size='8' className="input-group-prepend px-0">
                         <MDBInput

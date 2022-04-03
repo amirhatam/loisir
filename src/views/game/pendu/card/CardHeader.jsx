@@ -1,6 +1,5 @@
 import { MDBCardBody, MDBCardText, MDBCardTitle, MDBCol, MDBRow } from 'mdb-react-ui-kit';
 import React from 'react';
-import '../../../../assets/styles/FontSize.css'
 
 const CardHeader = (props) => {
     return (
