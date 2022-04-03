@@ -19,7 +19,6 @@ export const Dictionary = (
                 let nounAnts = []
                 let verbSyns = []
                 let verbAnts = []
-                console.log("test");
                 // console.log(response.data[0].meanings[0].definitions[0].definition);
                 // console.log(response.data[0].meanings[1].definitions[0].definition);
                 if (response.status === 200) {

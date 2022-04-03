@@ -13,7 +13,7 @@ export const EndGame = (props) => {
             </MDBCardText>
 
             <MDBRow className='justify-content-center mb-md-5'>
-                <MDBCol size='6'>
+                <MDBCol size='6' className='text-center'>
                     {
                         props.EndGameMsg === `Sorry, you just lost the game, the word was : `
                             ?
@@ -26,8 +26,7 @@ export const EndGame = (props) => {
             </MDBRow>
             <MDBRow>
                 <MDBCol className='text-center'>
-                    <MDBBtn onClick={props.clearState}>Try again
-                        <MDBIcon className='fa-lg ' far icon="smile-wink" />
+                    <MDBBtn onClick={props.clearState}> Try again <MDBIcon className='fa-lg ' far icon="smile-wink" />
                     </MDBBtn>
                 </MDBCol>
             </MDBRow>

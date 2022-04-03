@@ -66,7 +66,6 @@ export const Pendu = () => {
 
     const findMysteryWord = () => {
 
-        // getMeaning()
 
         let numOfPlay = numberOfPlay
 
