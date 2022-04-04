@@ -6,7 +6,7 @@ export default function Calculator() {
         <section className='bgc-lightblue'>
             <MDBContainer className='pb-md-5'>
                 <MDBRow >
-                    <MDBCardTitle className='text-center my-md-5 display-4'>The Calculators</MDBCardTitle>
+                    <MDBCardTitle className='text-center my-md-5 display-5'>The Calculators</MDBCardTitle>
                     <MDBCol md='4'>
                         <MDBCard >
                             <MDBCardBody>
