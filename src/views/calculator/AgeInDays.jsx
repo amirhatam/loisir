@@ -41,20 +41,20 @@ export default function AgeInDays() {
     return (
         <MDBContainer className='pb-md-5'>
             <MDBRow className='justify-content-center'>
-                <MDBCardTitle className='text-center my-md-5 display-4'>Calculators</MDBCardTitle>
-                <MDBCol md='4'>
-                    <MDBCard >
-                        <MDBCardBody>
-                            <MDBCardTitle className='text-uppercase'>Age Calculator</MDBCardTitle>
-                            <MDBCardText className='my-md-4 fw-lighter'>Find your age in days, hours, minutes, seconds.</MDBCardText>
+                <MDBCardTitle className='text-center my-md-5 display-5 my-4'>Calculator</MDBCardTitle>
+                <MDBCol className='col-md-4 col-6'>
+                    <MDBCard className='mb-5'>
+                        <MDBCardBody className='text-center'>
+                            <MDBCardTitle className='text-uppercase h5-fs'>Age Calculator</MDBCardTitle>
+                            <MDBCardText className='my-md-4 fw-lighter p-fs'>Find your age in days, hours, minutes, seconds.</MDBCardText>
                             <MDBRow>
-                                <MDBCol md="3">
+                                <MDBCol md="4" className='my-2'>
                                     <MDBInput label='Year' onChange={(e) => setYear(parseInt(e.target.value))} id='form1' type='text' />
                                 </MDBCol>
-                                <MDBCol md="3">
+                                <MDBCol md="4" className='my-2'>
                                     <MDBInput label='Month' onChange={(e) => setMonth(parseInt(e.target.value))} id='form1' type='text' />
                                 </MDBCol>
-                                <MDBCol md="3">
+                                <MDBCol md="4" className='my-2'>
                                     <MDBInput label='Days' onChange={(e) => setDays(parseInt(e.target.value))} id='form1' type='text' />
                                 </MDBCol>
                             </MDBRow>
@@ -89,7 +89,7 @@ export default function AgeInDays() {
                                     :
                                     null
                             }
-                            <MDBBtn onClick={ageInDays} className="mt-md-3">Calculate</MDBBtn>
+                            <MDBBtn onClick={ageInDays} className="mt-md-3 mt-4">Calculate</MDBBtn>
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>
