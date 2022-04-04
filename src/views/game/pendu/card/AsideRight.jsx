@@ -2,9 +2,9 @@ import { MDBCardBody, MDBCardText, MDBCardTitle, MDBCol } from 'mdb-react-ui-kit
 import React, { useState } from 'react'
 
 export const AsideRight = (props) => {
-    const [definition, setDefinition] = useState('Definition')
-    const [synonyms, setSynonyms] = useState("Synonyms")
-    const [antonyms, setAntonyms] = useState("Antonyms")
+    const [definition] = useState('Definition')
+    const [synonyms] = useState("Synonyms")
+    const [antonyms] = useState("Antonyms")
 
     return (
         <>

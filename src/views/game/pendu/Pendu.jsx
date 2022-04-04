@@ -170,7 +170,7 @@ export const Pendu = () => {
         }
     }
 
-    console.log(randomWord);
+    // console.log(randomWord);
 
     return (
         <section style={{ backgroundColor: "#4B515D" }}>

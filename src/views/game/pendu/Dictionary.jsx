@@ -14,13 +14,11 @@ export const Dictionary = (
         (async () => {
             try {
                 const response = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en_US/${randomWord}`)
-                // const response = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en_US/earlier`)
                 let nounSyns = []
                 let nounAnts = []
                 let verbSyns = []
                 let verbAnts = []
-                // console.log(response.data[0].meanings[0].definitions[0].definition);
-                // console.log(response.data[0].meanings[1].definitions[0].definition);
+
                 if (response.status === 200) {
                     const nounData = response.data[0].meanings[0]
                     const verbData = response.data[0].meanings[1]

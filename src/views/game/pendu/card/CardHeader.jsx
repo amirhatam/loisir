@@ -1,27 +1,7 @@
 import { MDBCardBody, MDBCardText, MDBCardTitle, MDBCol, MDBRow } from 'mdb-react-ui-kit';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const CardHeader = (props) => {
-    const [tokenColor, setTokenColor] = useState([])
-
-
-
-    // useEffect(() => {
-
-    //     if (props.numberOfPlay === 6 || props.numberOfPlay === 5) {
-    //         console.log("1");
-    //         setTokenColor("text-success h4-fs")
-    //     } else if (props.numberOfPlay === 4 || props.numberOfPlay === 3) {
-    //         console.log("2");
-    //         setTokenColor("")
-    //         setTokenColor("text-warning h4-fs")
-    //     } else if (props.numberOfPlay === 2 || props.numberOfPlay === 1) {
-    //         console.log("3");
-    //         setTokenColor("text-danger h4-fs")
-    //     }
-
-    // }, [])
-
 
     return (
         <>

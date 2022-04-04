@@ -18,7 +18,6 @@ export const CardBody = (props) => {
 
                     <MDBCol size='2' className="input-group-prepend px-0">
                         <MDBBtn onClick={props.findMysteryWord}>
-                            {/* <MDBBtn onClick={props.clearState}> */}
                             Enter
                         </MDBBtn>
                     </MDBCol>
