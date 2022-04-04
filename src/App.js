@@ -15,6 +15,8 @@ import { Footer } from './components/Footer';
 import ContactPage from './views/ContactPage';
 import SquareNumbers from './views/calculator/SquareNumbers';
 import { Pendu } from './views/game/pendu/Pendu';
+import './assets/styles/FontSize.css'
+
 
 function App() {
   return (
