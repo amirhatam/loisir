@@ -1,7 +1,28 @@
 import { MDBCardBody, MDBCardText, MDBCardTitle, MDBCol, MDBRow } from 'mdb-react-ui-kit';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const CardHeader = (props) => {
+    const [tokenColor, setTokenColor] = useState([])
+
+
+
+    // useEffect(() => {
+
+    //     if (props.numberOfPlay === 6 || props.numberOfPlay === 5) {
+    //         console.log("1");
+    //         setTokenColor("text-success h4-fs")
+    //     } else if (props.numberOfPlay === 4 || props.numberOfPlay === 3) {
+    //         console.log("2");
+    //         setTokenColor("")
+    //         setTokenColor("text-warning h4-fs")
+    //     } else if (props.numberOfPlay === 2 || props.numberOfPlay === 1) {
+    //         console.log("3");
+    //         setTokenColor("text-danger h4-fs")
+    //     }
+
+    // }, [])
+
+
     return (
         <>
             <MDBRow className='justify-content-center mb-md-4'>
@@ -34,7 +55,14 @@ const CardHeader = (props) => {
 
                             <MDBCardBody className='pt-md-2 px-0'>
                                 <MDBCardText className='h6-fs'>
-                                    <strong className='text-danger h4-fs'> {props.numberOfPlay} </strong>
+                                    <strong className={
+                                        // condition   ?  valeur
+                                        // else if  condition  ?  valeur
+                                        // else   valeur
+                                        props.numberOfPlay > 4 ? "text-success h4-fs"
+                                            : props.numberOfPlay > 2 ? "text-warning h4-fs"
+                                                : "text-danger h4-fs"
+                                    } > {props.numberOfPlay} </strong>
                                     token
                                 </MDBCardText>
                             </MDBCardBody>
@@ -42,7 +70,7 @@ const CardHeader = (props) => {
                     </MDBRow>
                 </MDBCol>
 
-            </MDBRow>
+            </MDBRow >
         </>
     );
 }

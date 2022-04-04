@@ -34,8 +34,7 @@ export const Pendu = () => {
     const [EndGameMsg, setEndGameMsg] = useState("")
     const [lettersChosenMsg, setLettersChosenMsg] = useState("")
 
-
-    let mysteryWord = randomWords();
+    // let mysteryWord = randomWords();
 
     if (wordsFound.length === 0) { // Add '_' for each letter of MysteryWord 
         for (let i = 0; i < randomWord.length; i++) {
@@ -65,8 +64,6 @@ export const Pendu = () => {
 
 
     const findMysteryWord = () => {
-
-
         let numOfPlay = numberOfPlay
 
         if (numberOfPlay > 1) {  // Condition: gamer still have token
