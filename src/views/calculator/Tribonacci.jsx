@@ -36,50 +36,51 @@ export default function Tribonacci() {
     }
 
     return (
-        <MDBContainer className='pb-md-5'>
-            <MDBRow className='justify-content-center'>
-                <MDBCardTitle className='text-center my-md-5 display-4'>Calculators</MDBCardTitle>
-                <MDBCol md='4'>
-                    <MDBCard >
-                        <MDBCardBody>
-                            <MDBCardTitle className='text-uppercase'>tribonacci numbers</MDBCardTitle>
-                            <MDBCardText className='my-md-4 fw-lighter'>Finding tribonacci numbers between two numbers</MDBCardText>
-                            <MDBRow>
-                                <MDBCol md="6">
+        <section className='bgc-lightblue'>
+            <MDBContainer className='pb-5'>
+                <MDBRow className='justify-content-center mb-md-5'>
+                    <MDBCardTitle className='text-center my-md-5 display-5 my-4'>Calculator</MDBCardTitle>
+                    <MDBCol className='col-md-4 col-8'>
+                        <MDBCard className='my-md-5 my-3'>
+                            <MDBCardBody className='text-center'>
+                                <MDBCardTitle className='text-uppercase h5-fs my-md-3 my-4'>tribonacci numbers</MDBCardTitle>
+                                <MDBCardText className='my-md-4 fw-lighter h6-fs'>Finding tribonacci numbers between two numbers</MDBCardText>
+                                <MDBRow>
+                                    <MDBCol md="6">
 
-                                    <MDBInput label='Minimum Number' onChange={(e) => setFirstInput(parseInt(e.target.value))} id='form1' type='text' className='mb-md-3' />
-                                    {
-                                        errorFirstInput
-                                            ?
-                                            <p className='text-center text-danger'>{errorFirstInput}</p>
-                                            :
-                                            null
-                                    }
-                                </MDBCol>
-                                <MDBCol md="6">
-                                    <MDBInput label='Maximum Number' onChange={(e) => setSecondInput(parseInt(e.target.value))} id='form1' type='text' className='mb-md-3' />
-                                    {
-                                        errorSecondInput
-                                            ?
-                                            <p className='text-center text-danger'>{errorSecondInput}</p>
-                                            :
-                                            null
-                                    }
-                                </MDBCol>
-                            </MDBRow>
-                            {
-                                dateResult
-                                    ?
-                                    <p className='text-center'>{dateResult.join(", ")}</p>
-                                    :
-                                    null
-                            }
-                            <MDBBtn onClick={tribonacciP}>Calculate</MDBBtn>
-                        </MDBCardBody>
-                    </MDBCard>
-                </MDBCol>
-
-            </MDBRow>
-        </MDBContainer >
+                                        <MDBInput label='Minimum Number' onChange={(e) => setFirstInput(parseInt(e.target.value))} id='form1' type='text' className='mb-3' />
+                                        {
+                                            errorFirstInput
+                                                ?
+                                                <p className='text-center text-danger'>{errorFirstInput}</p>
+                                                :
+                                                null
+                                        }
+                                    </MDBCol>
+                                    <MDBCol md="6">
+                                        <MDBInput label='Maximum Number' onChange={(e) => setSecondInput(parseInt(e.target.value))} id='form1' type='text' className='mb-3' />
+                                        {
+                                            errorSecondInput
+                                                ?
+                                                <p className='text-center text-danger'>{errorSecondInput}</p>
+                                                :
+                                                null
+                                        }
+                                    </MDBCol>
+                                </MDBRow>
+                                {
+                                    dateResult
+                                        ?
+                                        <p className='text-center'>{dateResult.join(", ")}</p>
+                                        :
+                                        null
+                                }
+                                <MDBBtn onClick={tribonacciP}>Calculate</MDBBtn>
+                            </MDBCardBody>
+                        </MDBCard>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer >
+        </section>
     );
 }

@@ -32,30 +32,32 @@ export default function SecondsToDate() {
     }
 
     return (
-        <MDBContainer className='pb-md-5'>
-            <MDBRow className='justify-content-center'>
-                <MDBCardTitle className='text-center my-md-5 display-4'>Calculators</MDBCardTitle>
-                <MDBCol md='3'>
-                    <MDBCard >
-                        <MDBCardBody>
-                            <MDBCardTitle className='text-uppercase'>Seconds to date</MDBCardTitle>
-                            <MDBCardText className='my-md-4 fw-lighter'>
-                                The calculated seconds will be displayed in years, months, weeks, days, hours, minutes, and seconds.
-                            </MDBCardText>
-                            <MDBInput label='Enter seconds' onChange={getInputValue} id='form1' type='text' className='mb-md-3' />
-                            {
-                                dateResult
-                                    ?
-                                    <p className='text-center'>{dateResult}  </p>
-                                    :
-                                    null
-                            }
-                            <MDBBtn onClick={formatDuration}>Calculate</MDBBtn>
-                        </MDBCardBody>
-                    </MDBCard>
-                </MDBCol>
+        <section className='bgc-lightblue'>
+            <MDBContainer className='pb-5'>
+                <MDBRow className='justify-content-center mb-md-5'>
+                    <MDBCardTitle className='text-center my-md-5 display-5 my-4'>Calculator</MDBCardTitle>
+                    <MDBCol className='col-md-4 col-8'>
+                        <MDBCard className='my-md-5 my-3'>
+                            <MDBCardBody className='text-center'>
+                                <MDBCardTitle className='text-uppercase h5-fs my-md-3 my-4'>Seconds to date</MDBCardTitle>
+                                <MDBCardText className='my-md-4 fw-lighter h6-fs'>
+                                    The calculated seconds will be displayed in years, months, weeks, days, hours, minutes, and seconds.
+                                </MDBCardText>
+                                <MDBInput label='Enter seconds' onChange={getInputValue} id='form1' type='text' className='my-4' />
+                                {
+                                    dateResult
+                                        ?
+                                        <p className='text-center'>{dateResult}  </p>
+                                        :
+                                        null
+                                }
+                                <MDBBtn onClick={formatDuration}>Calculate</MDBBtn>
+                            </MDBCardBody>
+                        </MDBCard>
+                    </MDBCol>
 
-            </MDBRow>
-        </MDBContainer>
+                </MDBRow>
+            </MDBContainer>
+        </section>
     );
 }

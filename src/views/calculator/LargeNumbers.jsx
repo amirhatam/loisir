@@ -38,31 +38,34 @@ export default function LargeNumbers() {
 
 
     return (
-        <MDBContainer className='pb-md-5'>
-            <MDBRow className='justify-content-center'>
-                <MDBCardTitle className='text-center my-md-5 display-4'>Calculators</MDBCardTitle>
-                <MDBCol md='5'>
-                    <MDBCard >
-                        <MDBCardBody>
-                            <MDBCardTitle className='text-uppercase'>Multiplying large numbers</MDBCardTitle>
-                            <MDBCardText className='my-md-4 fw-lighter'>Multiplying very large numbers.</MDBCardText>
-                            <MDBInput label='Enter First Number' onChange={(e) => setFirstInput(e.target.value)} id='form1' type='text' className='' />
-                            <MDBCardText className='my-md-2  text-center text-warning '>X</MDBCardText>
-                            <MDBInput label='Enter Seconds Number' onChange={(e) => setSecondInput(e.target.value)} id='form1' type='text' className='mb-md-3' />
-                            <MDBCardText className='my-md-2 text-center text-warning'>=</MDBCardText>
-                            {
-                                dateResult
-                                    ?
-                                    <p className='text-center text-success'>{dateResult}</p>
-                                    :
-                                    null
-                            }
-                            <MDBBtn onClick={multiply}>Calculate</MDBBtn>
-                        </MDBCardBody>
-                    </MDBCard>
-                </MDBCol>
 
-            </MDBRow>
-        </MDBContainer>
+        <section className='bgc-lightblue'>
+            <MDBContainer className='pb-5'>
+                <MDBRow className='justify-content-center mb-md-5'>
+                    <MDBCardTitle className='text-center my-md-5 display-5 my-4'>Calculator</MDBCardTitle>
+                    <MDBCol className='col-md-5 col-10'>
+                        <MDBCard className='my-md-5 my-3' >
+                            <MDBCardBody className='text-center'>
+                                <MDBCardTitle className='text-uppercase h5-fs'>Multiplying large numbers</MDBCardTitle>
+                                <MDBCardText className='my-md-4 fw-lighter h6-fs'>Multiply two very large numbers</MDBCardText>
+                                <MDBInput label='Enter First Number' onChange={(e) => setFirstInput(e.target.value)} id='form1' type='text' className='' />
+                                <MDBCardText className='my-2 text-center text-warning '>X</MDBCardText>
+                                <MDBInput label='Enter Seconds Number' onChange={(e) => setSecondInput(e.target.value)} id='form1' type='text' className='mb-md-3' />
+                                <MDBCardText className='my-2 text-center text-warning'>=</MDBCardText>
+                                {
+                                    dateResult
+                                        ?
+                                        <p className='text-center text-success'>{dateResult}</p>
+                                        :
+                                        null
+                                }
+                                <MDBBtn className='my-4' onClick={multiply}>Calculate</MDBBtn>
+                            </MDBCardBody>
+                        </MDBCard>
+                    </MDBCol>
+
+                </MDBRow>
+            </MDBContainer>
+        </section>
     );
 }

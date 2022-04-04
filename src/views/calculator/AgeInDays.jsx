@@ -39,62 +39,65 @@ export default function AgeInDays() {
         }
     }
     return (
-        <MDBContainer className='pb-md-5'>
-            <MDBRow className='justify-content-center'>
-                <MDBCardTitle className='text-center my-md-5 display-5 my-4'>Calculator</MDBCardTitle>
-                <MDBCol className='col-md-4 col-6'>
-                    <MDBCard className='mb-5'>
-                        <MDBCardBody className='text-center'>
-                            <MDBCardTitle className='text-uppercase h5-fs'>Age Calculator</MDBCardTitle>
-                            <MDBCardText className='my-md-4 fw-lighter p-fs'>Find your age in days, hours, minutes, seconds.</MDBCardText>
-                            <MDBRow>
-                                <MDBCol md="4" className='my-2'>
-                                    <MDBInput label='Year' onChange={(e) => setYear(parseInt(e.target.value))} id='form1' type='text' />
-                                </MDBCol>
-                                <MDBCol md="4" className='my-2'>
-                                    <MDBInput label='Month' onChange={(e) => setMonth(parseInt(e.target.value))} id='form1' type='text' />
-                                </MDBCol>
-                                <MDBCol md="4" className='my-2'>
-                                    <MDBInput label='Days' onChange={(e) => setDays(parseInt(e.target.value))} id='form1' type='text' />
-                                </MDBCol>
-                            </MDBRow>
-                            {
-                                inputErr
-                                    ?
-                                    <p className='text-center text-danger mt-md-3'>
-                                        {inputErr}
 
-                                    </p>
-                                    :
-                                    null
-                            }
-                            {
-                                daysResult
-                                    ?
-                                    <p className=' my-md-4'>
-                                        <strong>
-                                            Your age is :
-                                        </strong>
-                                        <br />
-                                        {age}
-                                        <br />
-                                        or {daysResult} days
-                                        <br />
-                                        or {hoursResult} hours
-                                        <br />
-                                        or  {minutesResult} minutes
-                                        <br />
-                                        or {secondsResult} seconds
-                                    </p>
-                                    :
-                                    null
-                            }
-                            <MDBBtn onClick={ageInDays} className="mt-md-3 mt-4">Calculate</MDBBtn>
-                        </MDBCardBody>
-                    </MDBCard>
-                </MDBCol>
+        <section className='bgc-lightblue'>
+            <MDBContainer className='pb-5'>
+                <MDBRow className='justify-content-center mb-md-5'>
+                    <MDBCardTitle className='text-center my-md-5 display-5 my-5'>Calculator</MDBCardTitle>
+                    <MDBCol className='col-md-4 col-8'>
+                        <MDBCard className='my-5'>
+                            <MDBCardBody className='text-center'>
+                                <MDBCardTitle className='text-uppercase h5-fs'>Age Calculator</MDBCardTitle>
+                                <MDBCardText className='my-md-4 fw-lighter p-fs'>Find your age in days, hours, minutes, seconds.</MDBCardText>
+                                <MDBRow>
+                                    <MDBCol md="4" className='my-2'>
+                                        <MDBInput label='Year' onChange={(e) => setYear(parseInt(e.target.value))} id='form1' type='text' />
+                                    </MDBCol>
+                                    <MDBCol md="4" className='my-2'>
+                                        <MDBInput label='Month' onChange={(e) => setMonth(parseInt(e.target.value))} id='form1' type='text' />
+                                    </MDBCol>
+                                    <MDBCol md="4" className='my-2'>
+                                        <MDBInput label='Days' onChange={(e) => setDays(parseInt(e.target.value))} id='form1' type='text' />
+                                    </MDBCol>
+                                </MDBRow>
+                                {
+                                    inputErr
+                                        ?
+                                        <p className='text-center text-danger mt-md-3'>
+                                            {inputErr}
 
-            </MDBRow>
-        </MDBContainer >
+                                        </p>
+                                        :
+                                        null
+                                }
+                                {
+                                    daysResult
+                                        ?
+                                        <p className=' my-md-4'>
+                                            <strong>
+                                                Your age is :
+                                            </strong>
+                                            <br />
+                                            {age}
+                                            <br />
+                                            or {daysResult} days
+                                            <br />
+                                            or {hoursResult} hours
+                                            <br />
+                                            or  {minutesResult} minutes
+                                            <br />
+                                            or {secondsResult} seconds
+                                        </p>
+                                        :
+                                        null
+                                }
+                                <MDBBtn onClick={ageInDays} className="mt-md-3 mt-4">Calculate</MDBBtn>
+                            </MDBCardBody>
+                        </MDBCard>
+                    </MDBCol>
+
+                </MDBRow>
+            </MDBContainer >
+        </section>
     );
 }
