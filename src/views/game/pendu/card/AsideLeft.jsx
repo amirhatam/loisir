@@ -10,10 +10,10 @@ export const AsideLeft = (props) => {
         <>
             <MDBCol className='col-md-4 col-12'>
                 <MDBCardBody className=' '>
-                    <MDBCardTitle className='h4-fs fw-lighter text-primary'>Noun</MDBCardTitle>
+                    <MDBCardTitle tag='h3' variant="h3-responsive" className='fw-light text-primary'>Noun</MDBCardTitle>
                 </MDBCardBody>
                 <MDBCardBody className=' '>
-                    <MDBCardText className='text-muted h6-fs'>
+                    <MDBCardText tag='h5' variant="h5-responsive" className='fw-lighter mb-4'>
                         {
                             props.nounDefinition.length > 0
                                 ?
@@ -22,12 +22,12 @@ export const AsideLeft = (props) => {
                                 null
                         }
                     </MDBCardText>
-                    <MDBCardText className='h5-fs'>
+                    <MDBCardText tag='h4' variant="h4-responsive" className='fw-normal'>
                         {props.nounDefinition}
                     </MDBCardText>
                 </MDBCardBody>
                 <MDBCardBody className=' '>
-                    <MDBCardText className='text-muted h6-fs'>
+                    <MDBCardText tag='h5' variant="h5-responsive" className='fw-lighter mb-4'>
                         {
                             props.nounSynonyms.length > 0
                                 ?
@@ -37,13 +37,13 @@ export const AsideLeft = (props) => {
 
                         }
                     </MDBCardText>
-                    <MDBCardText className='text-capitalize h5-fs'>
+                    <MDBCardText className='text-capitalize fw-normal' tag='h4' variant="h4-responsive" >
                         {props.nounSynonyms.join(" - ")}
                     </MDBCardText>
                 </MDBCardBody>
 
                 <MDBCardBody className=' '>
-                    <MDBCardText className='text-muted h6-fs'>
+                    <MDBCardText className='fw-lighter mb-4' tag='h5' variant="h5-responsive">
                         {
                             props.nounAntonyms.length > 0
                                 ?
@@ -52,7 +52,7 @@ export const AsideLeft = (props) => {
                                 null
                         }
                     </MDBCardText>
-                    <MDBCardText className='text-capitalize h5-fs'>
+                    <MDBCardText className='text-capitalize fw-normal' tag='h4' variant="h4-responsive">
                         {props.nounAntonyms.join(" - ")}
                     </MDBCardText>
                 </MDBCardBody>

@@ -159,7 +159,7 @@ export const Pendu = () => {
     //Accept only alphabets values in input 
     const getInputValue = (e) => {
 
-        const userValue = e.target.value
+        const userValue = e.target.value.toLowerCase()
         if (userValue.match(/[a-z]/i)) {
             setInput(userValue)
             setErrValueMsg("");
@@ -170,7 +170,7 @@ export const Pendu = () => {
         }
     }
 
-    // console.log(randomWord);
+    console.log(randomWord);
 
     return (
         <section style={{ backgroundColor: "#4B515D" }}>
