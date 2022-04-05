@@ -2,6 +2,8 @@ import React from 'react'
 import { MDBBtn, MDBCardImage, MDBCardText, MDBCol, MDBInput, MDBRow } from 'mdb-react-ui-kit'
 
 export const CardBody = (props) => {
+
+
     return (
         <>
             <MDBCol className='col-md-4 col-12'>
@@ -10,14 +12,14 @@ export const CardBody = (props) => {
                         <MDBInput
                             label='Please enter a letter or a word'
                             onChange={props.getInputValue}
-                            id='form1'
+                            id='form'
                             type='text'
                             className='mb-md-3 form-control'
                         />
                     </MDBCol>
 
                     <MDBCol size='2' className="input-group-prepend px-0">
-                        <MDBBtn onClick={props.findMysteryWord}>
+                        <MDBBtn id="btn" onClick={props.findMysteryWord}>
                             Enter
                         </MDBBtn>
                     </MDBCol>

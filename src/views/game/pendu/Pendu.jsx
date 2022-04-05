@@ -163,6 +163,8 @@ export const Pendu = () => {
     //Accept only alphabets values in input 
     const getInputValue = (e) => {
 
+
+
         const userValue = e.target.value.toLowerCase()
         if (userValue.match(/[a-z]/i)) {
             setInput(userValue)
@@ -172,6 +174,19 @@ export const Pendu = () => {
         } else if (!userValue) {
             setErrValueMsg("");
         }
+
+
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function handleClick(event) {
+            //  if you are submitting a form (prevents page reload)
+            event.preventDefault();
+
+            const formInput = document.getElementById('form');
+
+            //  clear input field
+            formInput.value = '';
+        });
     }
 
     // console.log(randomWord);
