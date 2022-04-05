@@ -20,6 +20,8 @@ export const Pendu = () => {
     const [penduImg, setPenduImg] = useState([PenduOne])
 
     //Dictionary
+    const [partOneOfSpeech, setPartOneOfSpeech] = useState([])
+    const [partTwoOfSpeech, setPartTwoOfSpeech] = useState([])
     const [nounDefinition, setNounDefinition] = useState([])
     const [nounSynonyms, setNounSynonyms] = useState([])
     const [nounAntonyms, setNounAntonyms] = useState([])
@@ -43,6 +45,8 @@ export const Pendu = () => {
     }
 
     Dictionary(
+        setPartOneOfSpeech,
+        setPartTwoOfSpeech,
         randomWord,
         setNounDefinition,
         setNounSynonyms,
@@ -170,7 +174,7 @@ export const Pendu = () => {
         }
     }
 
-    console.log(randomWord);
+    // console.log(randomWord);
 
     return (
         <section style={{ backgroundColor: "#4B515D" }}>
@@ -207,7 +211,8 @@ export const Pendu = () => {
                                             verbDefinition={verbDefinition}
                                             verbSynonyms={verbSynonyms}
                                             verbAntonyms={verbAntonyms}
-                                            clearState={clearState}
+                                            partOneOfSpeech={partOneOfSpeech}
+                                            partTwoOfSpeech={partTwoOfSpeech}
                                         />
                                 }
                             </MDBCardBody>

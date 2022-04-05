@@ -10,7 +10,7 @@ export const AsideLeft = (props) => {
         <>
             <MDBCol className='col-md-4 col-12'>
                 <MDBCardBody className=' '>
-                    <MDBCardTitle tag='h3' variant="h3-responsive" className='fw-light text-primary'>Noun</MDBCardTitle>
+                    <MDBCardTitle tag='h3' variant="h3-responsive" className='text-capitalize fw-light text-primary'>{props.partOneOfSpeech} </MDBCardTitle>
                 </MDBCardBody>
                 <MDBCardBody className=' '>
                     <MDBCardText tag='h5' variant="h5-responsive" className='fw-lighter mb-4'>
