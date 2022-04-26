@@ -44,7 +44,7 @@ export const Pendu = () => {
         }
     }
 
-    Dictionary(
+    const dictionary = Dictionary(
         setPartOneOfSpeech,
         setPartTwoOfSpeech,
         randomWord,
@@ -70,74 +70,78 @@ export const Pendu = () => {
     const findMysteryWord = () => {
         let numOfPlay = numberOfPlay
 
-        if (numberOfPlay > 1) {  // Condition: gamer still have token
+        if (input) {
+            if (numberOfPlay > 1) {  // Condition: gamer still have token
 
-            if (input.length === 1) { // Condition for separate input value (words & alphabet) 
+                if (input.length === 1) { // Condition for separate input value (words & alphabet) 
 
-                if (lettersChosen.indexOf(input) === -1) { //  Condition for Get input value non repeated 
-                    lettersChosen.push(input)
-                    setLettersChosenMsg("The letters you entered are : ")
-                    setErrMsg("");
-                } else {
-                    setErrMsg("You've already tried with that letter. I'm not counting this try because I'm nice ;)");
-                    return;
-                }
-                if (!randomWord.includes(input)) {
-                    numOfPlay--
-                    setNumberOfPlay(numOfPlay)
-                    setImagesFunc(numOfPlay, setPenduImg)
-                }
+                    if (lettersChosen.indexOf(input) === -1) { //  Condition for Get input value non repeated 
+                        lettersChosen.push(input)
+                        setLettersChosenMsg("The letters you entered are : ")
+                        setErrMsg("");
+                    } else {
+                        setErrMsg("You've already tried with that letter. I'm not counting this try because I'm nice ;)");
+                        return;
+                    }
+                    if (!randomWord.includes(input)) {
+                        numOfPlay--
+                        setNumberOfPlay(numOfPlay)
+                        setImagesFunc(numOfPlay, setPenduImg)
+                    }
 
-                const result = []
-                if (lettersChosen.length <= 1) {      //  Comparison  user input and Mystery Word
-                    randomWord.split("").map((e, i) => {
-                        if (!wordsFound.length > 0) {
-                            if (input.indexOf(e) === -1) {
+                    const result = []
+                    if (lettersChosen.length <= 1) {      //  Comparison  user input and Mystery Word
+                        randomWord.split("").map((e, i) => {
+                            if (!wordsFound.length > 0) {
+                                if (input.indexOf(e) === -1) {
+                                    return result.push("_")
+                                } else {
+                                    return result.push(e)
+                                }
+                            } else {
+                                if (input.indexOf(e) === -1) {
+                                    return result.push("_")
+                                } else {
+                                    return result.push(e)
+                                }
+                            }
+                        })
+
+                    } else {
+                        randomWord.split("").map((e, i) => {
+                            if (lettersChosen.indexOf(e) === -1) {
                                 return result.push("_")
                             } else {
                                 return result.push(e)
                             }
-                        } else {
-                            if (input.indexOf(e) === -1) {
-                                return result.push("_")
-                            } else {
-                                return result.push(e)
-                            }
-                        }
-                    })
 
-                } else {
-                    randomWord.split("").map((e, i) => {
-                        if (lettersChosen.indexOf(e) === -1) {
-                            return result.push("_")
-                        } else {
-                            return result.push(e)
+                        })
+                        if (result.join("") === randomWord) {
+                            setEndGameMsg("Congratulations !! You've won !! The word was: ",);
                         }
+                    }
 
-                    })
-                    if (result.join("") === randomWord) {
-                        setEndGameMsg("Congratulations !! You've won !! The word was: ",);
+                    return setWordsFound(result)
+
+                } else {  // Part input value (Word)
+                    if (input == randomWord) {
+                        setEndGameMsg("Congratulations !! You've won !! The word was: ");
+                        setNumberOfPlay(numOfPlay)
+                    } else {
+                        setErrMsg("")
+                        numOfPlay--
+                        setErrMsg(`Sorry, MYSTERY WORD was not ${input}`);
+                        setNumberOfPlay(numOfPlay)
                     }
                 }
 
-                return setWordsFound(result)
-
-            } else {  // Part input value (Word)
-                if (input == randomWord) {
-                    setEndGameMsg("Congratulations !! You've won !! The word was: ");
-                    setNumberOfPlay(numOfPlay)
-                } else {
-                    setErrMsg("")
-                    numOfPlay--
-                    setErrMsg(`Sorry, MYSTERY WORD was not ${input}`);
-                    setNumberOfPlay(numOfPlay)
-                }
+            } else { // Finished user token
+                setEndGameMsg(`Sorry, you just lost the game, the word was : `)
             }
 
-        } else { // Finished user token
-            setEndGameMsg(`Sorry, you just lost the game, the word was : `)
+        } else {
+            setErrMsg('Please enter a letter !');
         }
-
     }
 
 
@@ -160,34 +164,6 @@ export const Pendu = () => {
 
     }
 
-    //Accept only alphabets values in input 
-    const getInputValue = (e) => {
-
-
-
-        const userValue = e.target.value.toLowerCase()
-        if (userValue.match(/[a-z]/i)) {
-            setInput(userValue)
-            setErrValueMsg("");
-        } else if (userValue && userValue.match(/[a-z]/i) === null) {
-            setErrValueMsg("Please enter alphabets only");
-        } else if (!userValue) {
-            setErrValueMsg("");
-        }
-
-
-        const btn = document.getElementById('btn');
-
-        btn.addEventListener('click', function handleClick(event) {
-            //  if you are submitting a form (prevents page reload)
-            event.preventDefault();
-
-            const formInput = document.getElementById('form');
-
-            //  clear input field
-            formInput.value = '';
-        });
-    }
 
     // console.log(randomWord);
 
@@ -210,7 +186,6 @@ export const Pendu = () => {
                                         />
                                         :
                                         < Playing
-                                            getInputValue={getInputValue}
                                             findMysteryWord={findMysteryWord}
                                             errValueMsg={errValueMsg}
                                             errMsg={errMsg}
@@ -228,6 +203,8 @@ export const Pendu = () => {
                                             verbAntonyms={verbAntonyms}
                                             partOneOfSpeech={partOneOfSpeech}
                                             partTwoOfSpeech={partTwoOfSpeech}
+                                            setErrValueMsg={setErrValueMsg}
+                                            setInput={setInput}
                                         />
                                 }
                             </MDBCardBody>

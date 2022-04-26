@@ -8,7 +8,7 @@ export const Footer = () => {
             <div className="container p-4 pb-0">
                 <section className="mb-4">
                     <a className="btn btn-outline-light btn-floating my-1 mx-2" href="https://portfolio-amir-hatam-dev.netlify.app/" role="button" title='Portfolio'>
-                        <i class="fas fa-suitcase fa-lg"></i>
+                        <i className="fas fa-suitcase fa-lg"></i>
                     </a>
                     <a className="btn btn-outline-light btn-floating my-1 mx-2" href="https://www.linkedin.com/in/amir-hatam-7ba7601ba/" role="button" title='Linkedin'>
                         <i className="fab fa-linkedin-in fa-lg"></i>

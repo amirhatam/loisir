@@ -11,6 +11,7 @@ export default function Jeux() {
             <MDBContainer className='pb-md-5 bgc-lightblue'>
                 <MDBRow className='justify-content-around'>
                     <MDBCardTitle className='text-center my-md-5 display-5 my-4'>The Games</MDBCardTitle>
+
                     <MDBCol className='col-md-4 col-9 my-4'>
                         <MDBCard >
                             <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay'>
@@ -25,6 +26,7 @@ export default function Jeux() {
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>
+
                     <MDBCol className='col-md-4 col-9 my-4'>
                         <MDBCard >
                             <MDBRipple rippleColor='light' rippleTag='div' className='bg-image hover-overlay'>
