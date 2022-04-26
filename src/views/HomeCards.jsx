@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBCard, MDBCardTitle, MDBCardBody, MDBCardHeader, MDBRow, MDBCol, MDBCardLink } from 'mdb-react-ui-kit';
+import { MDBCard, MDBCardTitle, MDBCardBody, MDBCardHeader, MDBRow, MDBCol, MDBCardLink, Link } from 'mdb-react-ui-kit';
 import "../assets/styles/HomeCards.css";
 
 
@@ -22,9 +22,11 @@ export default function HomeCards() {
             <MDBCol className='col-md-3 col-6'>
                 <MDBCard background='secondary' className='text-white mb-3 card-container' >
                     <MDBCardHeader>
-                        <MDBCardLink href='/games' className='txt-white p-fs'>
+                        {/* <MDBCardLink href='/games' className='txt-white p-fs'>
                             The Game
-                        </MDBCardLink>
+                        </MDBCardLink> */}
+                        <a className=" nav-link" to="/games"> games</a>
+
                     </MDBCardHeader>
                     <MDBCardBody>
                         <MDBCardTitle className='h6-fs'>HANGMAN</MDBCardTitle>
