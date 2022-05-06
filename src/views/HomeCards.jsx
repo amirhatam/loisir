@@ -22,10 +22,9 @@ export default function HomeCards() {
             <MDBCol className='col-md-3 col-6'>
                 <MDBCard background='secondary' className='text-white mb-3 card-container' >
                     <MDBCardHeader>
-                        {/* <MDBCardLink href='/games' className='txt-white p-fs'>
+                        <MDBCardLink href='/games' className='txt-white p-fs'>
                             The Game
-                        </MDBCardLink> */}
-                        <a className=" nav-link" to="/games"> games</a>
+                        </MDBCardLink>
 
                     </MDBCardHeader>
                     <MDBCardBody>
