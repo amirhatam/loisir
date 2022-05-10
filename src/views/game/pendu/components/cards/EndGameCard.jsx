@@ -19,7 +19,6 @@ export const EndGame = (props) => {
                             <MDBCardImage src={PenduSeven} fluid alt='...' />
                             :
                             <MDBCardImage src={Win} fluid alt='...' />
-
                     }
                 </MDBCol>
             </MDBRow>
