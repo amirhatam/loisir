@@ -14,7 +14,7 @@ export const AsideLeft = (props) => {
                         ?
                         <MDBCardBody className=''>
                             <MDBCardText tag='h5' variant="h5-responsive" className='fw-lighter mb-4'>
-                                definition
+                                Definition
                             </MDBCardText>
                             <MDBCardText tag='h4' variant="h4-responsive" className='fw-normal'>
                                 {props.nounDefinition}
@@ -28,7 +28,7 @@ export const AsideLeft = (props) => {
                         ?
                         <MDBCardBody className=''>
                             <MDBCardText tag='h5' variant="h5-responsive" className='fw-lighter mb-4'>
-                                synonyms
+                                Synonyms
                             </MDBCardText>
                             <MDBCardText className='text-capitalize fw-normal' tag='h4' variant="h4-responsive" >
                                 {props.nounSynonyms.join(" - ")}
@@ -43,7 +43,7 @@ export const AsideLeft = (props) => {
                         ?
                         <MDBCardBody className=''>
                             <MDBCardText className='fw-lighter mb-4' tag='h5' variant="h5-responsive">
-                                antonyms
+                                Antonyms
                             </MDBCardText>
                             <MDBCardText className='text-capitalize fw-normal' tag='h4' variant="h4-responsive">
                                 {props.nounAntonyms.join(" - ")}
