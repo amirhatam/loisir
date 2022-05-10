@@ -1,13 +1,13 @@
 import React from 'react'
 import { MDBCardImage, MDBCardText, MDBCol, MDBRow } from 'mdb-react-ui-kit'
-import Button from '../components/Button'
-import Input from '../components/Input'
+import Button from './Button'
+import Input from './Input'
 
 export const CardBody = (props) => {
 
     return (
         <>
-            <MDBCol className='col-md-4 col-12'>
+            <MDBCol className='col-md-4 col-12 py-5'>
                 <MDBRow className="input-group justify-content-center">
                     <Input {...props} />
 

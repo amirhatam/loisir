@@ -1,12 +1,11 @@
 import { MDBRow } from 'mdb-react-ui-kit'
 import React from 'react'
-import { AsideLeft } from './card/AsideLeft'
-import { AsideRight } from './card/AsideRight'
-import { CardBody } from './card/CardBody'
-import CardHeader from './card/CardHeader'
-import '../../../assets/styles/FontSize.css'
+import { AsideLeft } from './playing-cards/AsideLeft'
+import { AsideRight } from './playing-cards/AsideRight'
+import { CardBody } from './playing-cards/CardBody'
+import CardHeader from './playing-cards/CardHeader'
 
-
+import '../../../../../assets/styles/FontSize.css'
 
 export const Playing = (props) => {
 
