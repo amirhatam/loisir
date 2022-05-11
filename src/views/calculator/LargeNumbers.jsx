@@ -47,7 +47,7 @@ export default function LargeNumbers() {
                         <MDBCard className='my-md-5 my-3' >
                             <MDBCardBody className='text-center'>
                                 <MDBCardTitle className='text-uppercase h5-fs'>Multiplying large numbers</MDBCardTitle>
-                                <MDBCardText className='my-md-4 fw-lighter h6-fs'>Multiply two very large numbers</MDBCardText>
+                                <MDBCardText className='my-md-4 fw-lighter p-fs'>Multiply two very large numbers</MDBCardText>
                                 <MDBInput label='Enter First Number' onChange={(e) => setFirstInput(e.target.value)} id='form1' type='text' className='' />
                                 <MDBCardText className='my-2 text-center text-warning '>X</MDBCardText>
                                 <MDBInput label='Enter Seconds Number' onChange={(e) => setSecondInput(e.target.value)} id='form1' type='text' className='mb-md-3' />

@@ -40,7 +40,7 @@ export default function SquareNumbers() {
                         <MDBCard className='my-md-5 my-3'>
                             <MDBCardBody className='text-center'>
                                 <MDBCardTitle className='text-uppercase h5-fs my-md-3 my-4'>square numbers</MDBCardTitle>
-                                <MDBCardText className='my-md-4 fw-lighter h6-fs'>Finding square numbers, between two numbers.</MDBCardText>
+                                <MDBCardText className='my-md-4 fw-lighter p-fs'>Finding square numbers, between two numbers.</MDBCardText>
                                 <MDBRow>
                                     <MDBCol md="6">
 
