@@ -1,7 +1,7 @@
 import React from "react";
-import '../../assets/styles/PetitsChevaux.css'
-import Circle from "../../components/Circle.jsx"
-import Winner from "../../assets/pic/winner.gif"
+import '../../../assets/styles/PetitsChevaux.css'
+import Circle from "../../../components/Circle.jsx"
+import Winner from "../../../assets/pic/winner.gif"
 
 
 class PetitsChevaux extends React.Component {

@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Calculator from './views/Calculators';
 import Home from './views/Home';
 import Games from './views/Games';
-import PetitsChevaux from './views/game/PetitsChevaux';
+import PetitsChevaux from './views/game/petits-chevaux/PetitsChevaux';
 import LargeNumbers from './views/calculator/LargeNumbers';
 import AgeInDays from './views/calculator/AgeInDays';
 import SecondsToDate from './views/calculator/SecondsToDate';

@@ -68,7 +68,7 @@ export default function Button(props) {
                     } else {
                         props.setErrMsg("")
                         numOfPlay--
-                        props.setErrMsg(`Sorry, MYSTERY WORD was not ${props.input}`);
+                        props.setErrMsg(`Sorry ! MYSTERY WORD was not '${props.input}'`);
                         props.setNumberOfPlay(numOfPlay)
                     }
                 }

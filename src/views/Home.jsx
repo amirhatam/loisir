@@ -1,6 +1,6 @@
 import React from 'react'
 import { MDBContainer, MDBRow } from 'mdb-react-ui-kit'
-import HomeCards from './HomeCards'
+import HomeCards from '../components/HomeCards'
 
 
 

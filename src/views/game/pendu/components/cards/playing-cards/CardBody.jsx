@@ -18,7 +18,7 @@ export const CardBody = (props) => {
                 <MDBCardText className='text-danger fw-lighter text-center'>{props.errValueMsg}</MDBCardText>
                 <div className='mt-lg-5'>
                     <MDBCardText className='display-6 my-md-4 text-center'>{props.wordsFound.join(" ")}</MDBCardText>
-                    <MDBRow className='justify-content-center'>
+                    <MDBRow className='justify-content-center my-5'>
                         <MDBCol size='6'>
                             <MDBCardImage src={props.penduImg} fluid alt='...' />
                         </MDBCol>

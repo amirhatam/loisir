@@ -34,7 +34,7 @@ const CardHeader = (props) => {
                         <MDBCol size='5' className=''>
 
                             <MDBCardBody className='pt-md-2 px-0'>
-                                <MDBCardText className='h6-fs'>
+                                <MDBCardText className='h6-fs align-middle'>
                                     <strong className={
                                         // condition   ?  valeur
                                         // else if  condition  ?  valeur
