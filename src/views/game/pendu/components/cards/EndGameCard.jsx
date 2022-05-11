@@ -24,7 +24,7 @@ export const EndGame = (props) => {
             </MDBRow>
             <MDBRow>
                 <MDBCol className='text-center'>
-                    <MDBBtn onClick={props.clearState}> Try again <MDBIcon className='fa-lg ' far icon="smile-wink" />
+                    <MDBBtn color="dark" onClick={props.clearState}> Try again <MDBIcon className='fa-lg ' far icon="smile-wink" />
                     </MDBBtn>
                 </MDBCol>
             </MDBRow>

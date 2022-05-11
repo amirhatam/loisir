@@ -85,7 +85,7 @@ export default function Button(props) {
     return (
 
         <MDBCol size='2' className="input-group-prepend px-0">
-            <MDBBtn id="btn" onClick={findMysteryWord}>
+            <MDBBtn color="dark" id="btn" onClick={findMysteryWord}>
                 Enter
             </MDBBtn>
         </MDBCol>
