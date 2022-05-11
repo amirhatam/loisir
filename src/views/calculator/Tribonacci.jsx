@@ -75,7 +75,7 @@ export default function Tribonacci() {
                                         :
                                         null
                                 }
-                                <MDBBtn onClick={tribonacciP}>Calculate</MDBBtn>
+                                <MDBBtn color="dark" onClick={tribonacciP}>Calculate</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>

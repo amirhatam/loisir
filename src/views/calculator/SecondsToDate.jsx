@@ -51,7 +51,7 @@ export default function SecondsToDate() {
                                         :
                                         null
                                 }
-                                <MDBBtn onClick={formatDuration}>Calculate</MDBBtn>
+                                <MDBBtn color="dark" onClick={formatDuration}>Calculate</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>

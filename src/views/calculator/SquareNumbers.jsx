@@ -71,7 +71,7 @@ export default function SquareNumbers() {
                                         :
                                         null
                                 }
-                                <MDBBtn onClick={isSquare}>Calculate</MDBBtn>
+                                <MDBBtn color="dark" onClick={isSquare}>Calculate</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>

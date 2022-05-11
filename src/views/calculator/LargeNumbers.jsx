@@ -59,7 +59,7 @@ export default function LargeNumbers() {
                                         :
                                         null
                                 }
-                                <MDBBtn className='my-4' onClick={multiply}>Calculate</MDBBtn>
+                                <MDBBtn color="dark" className='my-4' onClick={multiply}>Calculate</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>

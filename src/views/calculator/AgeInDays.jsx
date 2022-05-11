@@ -91,7 +91,7 @@ export default function AgeInDays() {
                                         :
                                         null
                                 }
-                                <MDBBtn onClick={ageInDays} className="mt-md-3 mt-4">Calculate</MDBBtn>
+                                <MDBBtn color="dark" onClick={ageInDays} className="mt-md-3 mt-4">Calculate</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>
