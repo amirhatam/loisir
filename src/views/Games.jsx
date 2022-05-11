@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn, MDBRipple, MDBContainer, MDBRow, MDBCol, MDBCardHeader, MDBCardGroup } from 'mdb-react-ui-kit';
+import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn, MDBRipple, MDBContainer, MDBRow, MDBCardGroup } from 'mdb-react-ui-kit';
 import "../assets/styles/GeneralBGC.css"
 import petitsChevaux from '../assets/pic/petits-chevaux.jpg'
 import penduImg from '../assets/pic/pendu.jpg'
