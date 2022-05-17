@@ -28,6 +28,11 @@ export default function Calculator() {
             info: 'Find square numbers, between two numbers',
             url: '/calculator/square-numbers'
         },
+        {
+            title: 'Volume of a Cuboid',
+            info: 'calculate the volume of a cuboid with three values: the length, width and height of the cuboid.',
+            url: '/calculator/cuboid-volume'
+        },
 
     ])
 

@@ -16,6 +16,7 @@ import ContactPage from './views/ContactPage';
 import SquareNumbers from './views/calculator/SquareNumbers';
 import { Pendu } from './views/game/pendu/Pendu';
 import './assets/styles/FontSize.css'
+import CuboidVolume from './views/calculator/CuboidVolume';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/calculator/tribonacci" exact element={<Tribonacci />} />
         <Route path="/calculator/age-in-days" exact element={<AgeInDays />} />
         <Route path="/calculator/square-numbers" exact element={<SquareNumbers />} />
+        <Route path="/calculator/cuboid-volume" exact element={<CuboidVolume />} />
         <Route path="/contact" exact element={<ContactPage />} />
       </Routes>
       <Footer />
