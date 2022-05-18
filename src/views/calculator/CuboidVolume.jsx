@@ -1,17 +1,26 @@
 import React, { useState } from 'react';
 import { MDBContainer, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn, MDBInput, MDBCol, MDBRow } from 'mdb-react-ui-kit';
+import ModalPage from '../../components/ModalPage';
 
 export default function CuboidVolume() {
     const [length, setlength] = useState([])
     const [width, setWidth] = useState([])
     const [height, setHeight] = useState([])
     const [res, setRes] = useState("")
+    const [err, setErr] = useState([])
 
 
-    const getVolumeOfCuboid = () => setRes(length * width * height)
+    const getVolumeOfCuboid = () => {
+        const result = length * width * height
+        if (result) {
+            setRes(result)
+            setErr('')
+        } else {
+            setErr('Please make sure all fields are filled in correctly')
+        }
+    }
 
     return (
-
         <section className='bgc-lightblue'>
             <MDBContainer className='pb-5'>
                 <MDBRow className='justify-content-center mb-md-5'>
@@ -35,12 +44,12 @@ export default function CuboidVolume() {
                                 {
                                     res
                                         ?
-                                        <p className='text-center text-danger mt-md-3'>
-                                            {res}
-
-                                        </p>
+                                        <>
+                                            <ModalPage res={res} />
+                                        </>
                                         :
-                                        null
+                                        <p className='text-center text-danger mt-1 mb-0'>{err}</p>
+
                                 }
                                 <MDBBtn color="dark" onClick={getVolumeOfCuboid} className="mt-md-3 mt-4">Calculate</MDBBtn>
                             </MDBCardBody>

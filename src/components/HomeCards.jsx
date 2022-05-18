@@ -5,6 +5,7 @@ import "../assets/styles/HomeCards.css";
 
 export default function HomeCards() {
     // const [colors] = useState(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark'])
+
     const [cards] = useState([
         {
             category: 'The Game',
@@ -56,13 +57,13 @@ export default function HomeCards() {
         },
     ])
 
+
+
     return (
         <MDBRow className='justify-content-center my-5'>
-
-
-
             {
                 cards.map((e, i) => {
+
                     return (
                         <MDBCol key={i} className='col-md-3 col-6'>
                             <MDBCard background={e.boxColor} className='text-white mb-3 card-container' >
