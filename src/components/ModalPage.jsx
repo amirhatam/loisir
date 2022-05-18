@@ -34,7 +34,7 @@ export default function ModalPage(props) {
                             {props.res}
                         </MDBModalBody>
 
-                        <MDBModalFooter>
+                        <MDBModalFooter className='d-block'>
                             <MDBBtn color='dark' id="btn"
                                 onClick={hanldeClick}
                             >

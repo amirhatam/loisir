@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { MDBContainer, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn, MDBInput, MDBCol, MDBRow } from 'mdb-react-ui-kit';
+import ModalPage from '../../components/ModalPage';
 
 export default function SecondsToDate() {
-    const [seconds, setSeconds] = useState("")
+    const [seconds, setSeconds] = useState([])
     const [dateResult, setDateResult] = useState("")
+    const [err, setErr] = useState("")
 
     const formatDuration = () => {
         const time = { year: 31536000, day: 86400, hour: 3600, minute: 60, second: 1 },
@@ -24,11 +26,18 @@ export default function SecondsToDate() {
 
         let finalRes = res.length > 1 ? res.join(', ').replace(/,([^,]*)$/, ' and' + '$1') : res[0]
         setDateResult(finalRes)
+
+
     }
 
     const getInputValue = (e) => {
         const userValue = e.target.value
-        setSeconds(userValue)
+        if (userValue.match(/[0-9]/gm)) {
+            setSeconds(parseInt(userValue))
+            setErr('')
+        } else {
+            setErr('Please enter numbers only ')
+        }
     }
 
     return (
@@ -43,15 +52,15 @@ export default function SecondsToDate() {
                                 <MDBCardText className='my-md-4 fw-lighter p-fs'>
                                     The calculated seconds will be displayed in years, months, weeks, days, hours, minutes, and seconds.
                                 </MDBCardText>
-                                <MDBInput label='Enter seconds' onChange={getInputValue} id='form1' type='text' className='my-4' />
+                                <MDBInput label='Enter seconds' onChange={getInputValue} id='form1' type='text' className='mt-4 mb-0' />
                                 {
                                     dateResult
                                         ?
-                                        <p className='text-center'>{dateResult}  </p>
+                                        <ModalPage res={dateResult} />
                                         :
-                                        null
+                                        <p className='text-center text-danger my-0'>{err}</p>
                                 }
-                                <MDBBtn color="dark" onClick={formatDuration}>Calculate</MDBBtn>
+                                <MDBBtn className='mt-5' color="dark" onClick={formatDuration}>Calculate</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>
