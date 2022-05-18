@@ -7,36 +7,46 @@ export default function SecondsToDate() {
     const [dateResult, setDateResult] = useState("")
     const [err, setErr] = useState("")
 
+
     const formatDuration = () => {
-        const time = { year: 31536000, day: 86400, hour: 3600, minute: 60, second: 1 },
-            res = [];
-        if (seconds === 0) return 'now';
+        let secs = seconds
 
-        let some = seconds
+        if (secs > 0) {
 
-        for (let key in time) {
-            if (some >= time[key]) {
-                let val = Math.floor(some / time[key]);
+            const time = { year: 31536000, day: 86400, hour: 3600, minute: 60, second: 1 },
+                res = [];
+            if (seconds === 0) return 'now';
 
-                res.push(val += val > 1 ? ' ' + key + 's' : ' ' + key);
+            let some = seconds
 
-                some = some % time[key];
+            for (let key in time) {
+                if (some >= time[key]) {
+                    let val = Math.floor(some / time[key]);
+
+                    res.push(val += val > 1 ? ' ' + key + 's' : ' ' + key);
+
+                    some = some % time[key];
+                }
             }
+
+            let finalRes = res.length > 1 ? res.join(', ').replace(/,([^,]*)$/, ' and' + '$1') : res[0]
+            setDateResult(finalRes)
+            setErr('')
+
+        } else {
+            setErr('Please enter seconds')
         }
-
-        let finalRes = res.length > 1 ? res.join(', ').replace(/,([^,]*)$/, ' and' + '$1') : res[0]
-        setDateResult(finalRes)
-
 
     }
 
     const getInputValue = (e) => {
         const userValue = e.target.value
+
         if (userValue.match(/[0-9]/gm)) {
-            setSeconds(parseInt(userValue))
+            setSeconds(userValue)
             setErr('')
         } else {
-            setErr('Please enter numbers only ')
+            setErr('Please enter numbers only')
         }
     }
 
