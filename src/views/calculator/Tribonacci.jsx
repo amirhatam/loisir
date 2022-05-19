@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { MDBContainer, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn, MDBInput, MDBCol, MDBRow } from 'mdb-react-ui-kit';
+import ModalPage from '../../components/ModalPage';
 
 export default function Tribonacci() {
     const [firstInput, setFirstInput] = useState("")
     const [secondInput, setSecondInput] = useState("")
     const [dateResult, setDateResult] = useState([])
+    const [err, setErr] = useState([])
+
+
+
     const [errorFirstInput, setErrorFirstInput] = useState("")
     const [errorSecondInput, setErrorSecondInput] = useState("")
 
@@ -32,7 +37,7 @@ export default function Tribonacci() {
         let filterNum = allTriNum.filter(n => {
             return n >= firstInput
         })
-        setDateResult(filterNum);
+        setDateResult(filterNum.join(', '));
     }
 
     return (
@@ -48,7 +53,7 @@ export default function Tribonacci() {
                                 <MDBRow>
                                     <MDBCol md="6">
 
-                                        <MDBInput label='Minimum Number' onChange={(e) => setFirstInput(parseInt(e.target.value))} id='form1' type='text' className='mb-3' />
+                                        <MDBInput label='Enter First Number' onChange={(e) => setFirstInput(parseInt(e.target.value))} id='form1' type='text' className='mb-3' />
                                         {
                                             errorFirstInput
                                                 ?
@@ -58,7 +63,7 @@ export default function Tribonacci() {
                                         }
                                     </MDBCol>
                                     <MDBCol md="6">
-                                        <MDBInput label='Maximum Number' onChange={(e) => setSecondInput(parseInt(e.target.value))} id='form1' type='text' className='mb-3' />
+                                        <MDBInput label='Enter Seconds Number' onChange={(e) => setSecondInput(parseInt(e.target.value))} id='form1' type='text' className='mb-3' />
                                         {
                                             errorSecondInput
                                                 ?
@@ -69,13 +74,13 @@ export default function Tribonacci() {
                                     </MDBCol>
                                 </MDBRow>
                                 {
-                                    dateResult
+                                    dateResult != 0
                                         ?
-                                        <p className='text-center'>{dateResult.join(", ")}</p>
+                                        <ModalPage res={dateResult} />
                                         :
                                         null
                                 }
-                                <MDBBtn color="dark" onClick={tribonacciP}>Calculate</MDBBtn>
+                                <MDBBtn color="dark" className='my-4' onClick={tribonacciP}>Calculate</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>
