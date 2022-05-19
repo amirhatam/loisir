@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MDBContainer, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn, MDBInput, MDBCol, MDBRow } from 'mdb-react-ui-kit';
+import ModalPage from '../../components/ModalPage';
 
 export default function SquareNumbers() {
     const [firstInput, setFirstInput] = useState("")
@@ -28,7 +29,7 @@ export default function SquareNumbers() {
                 res.push(i)
             }
         }
-        setResult(res)
+        setResult(res.join(", "))
     }
 
     return (
@@ -44,7 +45,7 @@ export default function SquareNumbers() {
                                 <MDBRow>
                                     <MDBCol md="6">
 
-                                        <MDBInput label='First Number' onChange={(e) => setFirstInput(parseInt(e.target.value))} id='form1' type='text' className='mb-3' />
+                                        <MDBInput label='First Number' onChange={(e) => setFirstInput(parseInt(e.target.value))} id='form1' type='text' className='' />
                                         {
                                             errorFirstInput
                                                 ?
@@ -54,7 +55,7 @@ export default function SquareNumbers() {
                                         }
                                     </MDBCol>
                                     <MDBCol md="6">
-                                        <MDBInput label='Second Number' onChange={(e) => setSecondInput(parseInt(e.target.value))} id='form1' type='text' className='mb-3' />
+                                        <MDBInput label='Second Number' onChange={(e) => setSecondInput(parseInt(e.target.value))} id='form1' type='text' className='' />
                                         {
                                             errorSecondInput
                                                 ?
@@ -65,13 +66,13 @@ export default function SquareNumbers() {
                                     </MDBCol>
                                 </MDBRow>
                                 {
-                                    result
+                                    result != 0
                                         ?
-                                        <p className='text-center'>{result.join(", ")}</p>
+                                        <ModalPage res={result} />
                                         :
                                         null
                                 }
-                                <MDBBtn color="dark" onClick={isSquare}>Calculate</MDBBtn>
+                                <MDBBtn color="dark" onClick={isSquare} className="mt-5">Calculate</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>
