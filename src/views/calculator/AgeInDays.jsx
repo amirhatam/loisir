@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MDBContainer, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn, MDBInput, MDBCol, MDBRow } from 'mdb-react-ui-kit';
+import ModalPage from '../../components/ModalPage';
 
 export default function AgeInDays() {
     const [y, setYear] = useState("")
@@ -7,37 +8,48 @@ export default function AgeInDays() {
     const [d, setDays] = useState("")
     const [inputErr, setInputErr] = useState("")
 
-    const [age, setAge] = useState("")
-    const [daysResult, setDaysResult] = useState("")
-    const [hoursResult, setHoursResult] = useState("")
-    const [minutesResult, setMinutesResult] = useState("")
-    const [secondsResult, setSecondsResult] = useState("")
+    const [res, setRes] = useState("")
 
 
     const ageInDays = () => {
         if (!y || !m || !d) {
-            setInputErr("Please enter birthday")
-            setDaysResult("");
+            setInputErr("Please make sure all fields are filled in correctly")
         } else {
             setInputErr("")
 
-            //Find age in complete version years, months, days
             const birthday = new Date(`${y}-${m}-${d}`)
             const years = new Date(new Date() - birthday).getFullYear() - 1970
             const months = new Date(new Date() - birthday).getMonth()
             const days = new Date(new Date() - birthday).getDate() - 1
-            setAge(`You are ${years} years ${months} months ${days} days`)
 
-            //Find age in days
             let getDays = (new Date() - new Date().setFullYear(y, m - 1, d)) / 86400000
             if (getDays) {
-                setDaysResult(getDays);
-                setHoursResult(getDays * 24)
-                setMinutesResult(getDays * 24 * 60)
-                setSecondsResult(getDays * 24 * 60 * 60)
+                const age = `${years} years ${months} months ${days} days`
+                const dayRes = Math.round(getDays)
+                const hoursRes = getDays * 24
+                const minutesRes = getDays * 24 * 60
+                const secondsRes = getDays * 24 * 60 * 60
+
+                setRes(
+                    <p>
+                        <strong> You are  : </strong>
+                        <br />
+                        {age}
+                        <br />
+                        or {dayRes} days
+                        <br />
+                        or {hoursRes} hours
+                        <br />
+                        or  {minutesRes} minutes
+                        <br />
+                        or {secondsRes} seconds
+                    </p>
+                )
             }
         }
     }
+
+
     return (
 
         <section className='bgc-lightblue'>
@@ -61,37 +73,13 @@ export default function AgeInDays() {
                                     </MDBCol>
                                 </MDBRow>
                                 {
-                                    inputErr
+                                    res
                                         ?
-                                        <p className='text-center text-danger mt-md-3'>
-                                            {inputErr}
-
-                                        </p>
+                                        <ModalPage res={res} />
                                         :
-                                        null
+                                        <p className='text-center text-danger mt-0'> {inputErr} </p>
                                 }
-                                {
-                                    daysResult
-                                        ?
-                                        <p className=' my-md-4'>
-                                            <strong>
-                                                Your age is :
-                                            </strong>
-                                            <br />
-                                            {age}
-                                            <br />
-                                            or {daysResult} days
-                                            <br />
-                                            or {hoursResult} hours
-                                            <br />
-                                            or  {minutesResult} minutes
-                                            <br />
-                                            or {secondsResult} seconds
-                                        </p>
-                                        :
-                                        null
-                                }
-                                <MDBBtn color="dark" onClick={ageInDays} className="mt-md-3 mt-4">Calculate</MDBBtn>
+                                <MDBBtn color="dark" onClick={ageInDays} className="mt-4">Calculate</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>
