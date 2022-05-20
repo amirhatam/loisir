@@ -23,37 +23,37 @@ export default function HomeCards() {
             category: 'The Calculator',
             title: 'SECONDS TO DATE',
             boxColor: 'success',
-            url: '/calculator'
+            url: '/calculators'
         },
         {
             category: 'The Calculator',
             title: 'MULTIPLY BIG NUMBERS',
             boxColor: 'danger',
-            url: '/calculator'
+            url: '/calculators'
         },
         {
             category: 'The Calculator',
             title: 'TRIBONACCI NUMBERS',
             boxColor: 'warning',
-            url: '/calculator'
+            url: '/calculators'
         },
         {
             category: 'The Calculator',
             title: 'AGE IN DAYS',
             boxColor: 'info',
-            url: '/calculator'
+            url: '/calculators'
         },
         {
             category: 'The Calculator',
             title: 'SQUARE NUMBER',
             boxColor: 'dark',
-            url: '/calculator'
+            url: '/calculators'
         },
         {
             category: 'The Calculator',
             title: 'Volume of a Cuboid',
             boxColor: 'primary',
-            url: '/calculator'
+            url: '/calculators'
         },
     ])
 

@@ -26,9 +26,9 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/games" exact element={<Games />} />
-        <Route path="/games/petits-chevaux" exact element={<PetitsChevaux />} />
-        <Route path="/games/pendu" exact element={<Pendu />} />
-        <Route path="/calculator" exact element={<Calculator />} />
+        <Route path="/game/petits-chevaux" exact element={<PetitsChevaux />} />
+        <Route path="/game/pendu" exact element={<Pendu />} />
+        <Route path="/calculators" exact element={<Calculator />} />
         <Route path="/calculator/seconds-to-date" exact element={<SecondsToDate />} />
         <Route path="/calculator/large-numbers" exact element={<LargeNumbers />} />
         <Route path="/calculator/tribonacci" exact element={<Tribonacci />} />

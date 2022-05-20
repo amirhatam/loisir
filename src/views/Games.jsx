@@ -23,7 +23,7 @@ export default function Jeux() {
                                     Le jeu des petits chevaux est un jeu qui consiste à déplacer plusieurs pions par joueur, et à les emmener sur la partie réservée à leur couleur. Le premier joueur qui arrive sur la dernière case triangulaire remporte la partie.
                                 </MDBCardText>
                                 <div className='text-center '>
-                                    <MDBBtn color="dark" href='/games/petits-chevaux' className='mt-lg-4'>Enter</MDBBtn>
+                                    <MDBBtn color="dark" href='/game/petits-chevaux' className='mt-lg-4'>Enter</MDBBtn>
                                 </div>
                             </MDBCardBody>
                         </MDBCard>
@@ -38,7 +38,7 @@ export default function Jeux() {
                                     This is version of the classic letter guessing game called Hangman. You are shown a set of blank letters that match a word or phrase and you have to guess what these letters are to reveal the hidden word. You guess by picking letters from those displayed on the sides.
                                 </MDBCardText>
                                 <div className='text-center'>
-                                    <MDBBtn color="dark" href='/games/pendu'>Enter</MDBBtn>
+                                    <MDBBtn color="dark" href='/game/pendu'>Enter</MDBBtn>
                                 </div>
                             </MDBCardBody>
                         </MDBCard>
