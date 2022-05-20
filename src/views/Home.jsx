@@ -1,17 +1,16 @@
 import React from 'react'
 import { MDBContainer, MDBRow } from 'mdb-react-ui-kit'
 import HomeCards from '../components/HomeCards'
+import '../assets/styles/Home.css'
 
 
 
 function Home() {
     return (
         <MDBContainer>
-            <MDBRow className='justify-content-center'>
-                <div className="col-4" >
-                    <img src="https://raw.githubusercontent.com/juliangarnier/anime/master/documentation/assets/img/animejs-v3-header-animation.gif" className='img-fluid  ' alt='...' />
-                </div >
-            </MDBRow>
+            <div className="containerBG" >
+                <div className='animeBG'></div>
+            </div >
             <HomeCards />
         </MDBContainer>
     )

@@ -1,0 +1,16 @@
+.containerBG{
+    height: 500px;
+}
+
+.animeBG{
+    height: 400px;
+    width:100%;
+    position: absolute;
+    top: 8vmax;
+    left:0;
+    background-image: url("https://raw.githubusercontent.com/juliangarnier/anime/master/documentation/assets/img/animejs-v3-header-animation.gif");
+    background-position: center;
+    background-size: 450px;
+    background-repeat: no-repeat, repeat;
+    
+  }
