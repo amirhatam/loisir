@@ -51,13 +51,11 @@ export default function HomeCards() {
         },
         {
             category: 'The Calculator',
-            title: 'Volume of a Cuboid',
+            title: 'VOLUME OF A CUBOID',
             boxColor: 'primary',
             url: '/calculators'
         },
     ])
-
-
 
     return (
         <MDBRow className='justify-content-center my-5'>
@@ -67,7 +65,7 @@ export default function HomeCards() {
                     return (
                         <MDBCol key={i} className='col-md-3 col-6'>
                             <MDBCard background={e.boxColor} className='text-white mb-3 card-container' >
-                                <MDBCardHeader>
+                                <MDBCardHeader className='block-example border-bottom border-gray'>
                                     <MDBCardLink href={e.url} className='txt-white p-fs'>
                                         {e.category}
                                     </MDBCardLink>
