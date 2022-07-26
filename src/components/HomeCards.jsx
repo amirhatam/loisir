@@ -54,6 +54,11 @@ export default function HomeCards() {
             title: 'VOLUME OF A CUBOID',
             boxColor: 'primary',
             url: '/calculators'
+        }, {
+            category: 'The Calculator',
+            title: 'PREDICT YOUR AGE',
+            boxColor: 'secondary',
+            url: '/calculators'
         },
     ])
 
