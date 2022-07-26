@@ -4,6 +4,11 @@ import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBContainer, MDBRow, 
 export default function Calculator() {
     const [calculators] = useState([
         {
+            title: 'Predict your age',
+            info: 'Predict your age with list of ages when each of your great-grandparent died',
+            url: '/calculator/predict-your-age'
+        },
+        {
             title: 'Seconds to date',
             info: 'Convert seconds to date( years, months, days...)',
             url: '/calculator/seconds-to-date'

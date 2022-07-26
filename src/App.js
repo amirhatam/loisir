@@ -17,6 +17,7 @@ import SquareNumbers from './views/calculator/SquareNumbers';
 import { Pendu } from './views/game/pendu/Pendu';
 import './assets/styles/FontSize.css'
 import CuboidVolume from './views/calculator/CuboidVolume';
+import Predict from './views/calculator/Predict';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/game/petits-chevaux" exact element={<PetitsChevaux />} />
         <Route path="/game/pendu" exact element={<Pendu />} />
         <Route path="/calculators" exact element={<Calculator />} />
+        <Route path="/calculator/predict-your-age" exact element={<Predict />} />
         <Route path="/calculator/seconds-to-date" exact element={<SecondsToDate />} />
         <Route path="/calculator/large-numbers" exact element={<LargeNumbers />} />
         <Route path="/calculator/tribonacci" exact element={<Tribonacci />} />
